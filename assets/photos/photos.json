@@ -1,0 +1,382 @@
+{
+  "$comment": "Photographs for the Aldier site, free to use under the Unsplash License. tools/fetch_photos.py saves each at 800, 1600 and 2400 pixels wide as WebP under assets/photos/.",
+  "lagos-marina": {
+    "source": "https://images.unsplash.com/photo-1618828665347-d870c38c95c7",
+    "page": "https://unsplash.com/photos/9ySEZ-ugtJA",
+    "alt": "The Lagos Marina from above, the Civic Centre tower and the lagoon beyond",
+    "width": 1600,
+    "height": 2844,
+    "tone": "#8b979a"
+  },
+  "lagos-bridge": {
+    "source": "https://images.unsplash.com/photo-1744907895363-d351aa6019ef",
+    "page": "https://unsplash.com/photos/n8DxalbQBic",
+    "alt": "Traffic crossing a bridge over a Lagos waterway, the city dense on both banks",
+    "width": 1600,
+    "height": 900,
+    "tone": "#8e968b"
+  },
+  "abuja-flags": {
+    "source": "https://images.unsplash.com/photo-1733122051092-c19022119205",
+    "page": "https://unsplash.com/photos/MxDF3-ysw_g",
+    "alt": "Nigerian flags outside a federal office building in Abuja",
+    "width": 1600,
+    "height": 2133,
+    "tone": "#34535c"
+  },
+  "abuja-gate": {
+    "source": "https://images.unsplash.com/photo-1554457606-ed16c39db884",
+    "page": "https://unsplash.com/photos/LxENUKJXh_k",
+    "alt": "The white arch of the Abuja city gate, with the national crest",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#c1cbd1"
+  },
+  "bank-portico": {
+    "source": "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f",
+    "page": "https://unsplash.com/photos/2_K82gx9Uk8",
+    "alt": "The columned portico of a stone banking hall",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#85847d"
+  },
+  "civic-hall": {
+    "source": "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f",
+    "page": "https://unsplash.com/photos/WgUHuGSWPVM",
+    "alt": "A grey stone civic building facing an empty square",
+    "width": 1600,
+    "height": 2400,
+    "tone": "#707683"
+  },
+  "university-colonnade": {
+    "source": "https://images.unsplash.com/photo-1723242227624-37f507d3d63f",
+    "alt": "The tall white colonnade of a university building under a grey sky",
+    "width": 1600,
+    "height": 1200,
+    "tone": "#8a8e8a"
+  },
+  "classroom": {
+    "source": "https://images.unsplash.com/photo-1687794504223-8bdc02e25ef6",
+    "alt": "Secondary school students in uniform listening in a crowded classroom",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#7f634b"
+  },
+  "data-hall": {
+    "source": "https://images.unsplash.com/photo-1580106815433-a5b1d1d53d85",
+    "alt": "A long corridor of server cabinets behind glass in a data hall",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#394a59"
+  },
+  "server-engineer": {
+    "source": "https://images.unsplash.com/photo-1573164713988-8665fc963095",
+    "alt": "An engineer with a laptop checking equipment in a server room",
+    "width": 1600,
+    "height": 1068,
+    "tone": "#433f46"
+  },
+  "loupe": {
+    "source": "https://images.unsplash.com/photo-1510511336377-1a9caa095849",
+    "alt": "A printer's loupe resting on a sheet of colour proofs",
+    "width": 1600,
+    "height": 2400,
+    "tone": "#abb4c2"
+  },
+  "studio": {
+    "source": "https://images.unsplash.com/photo-1651465531201-7e430660fd82",
+    "alt": "Cameras set before an empty television news desk",
+    "width": 1600,
+    "height": 1200,
+    "tone": "#69655c"
+  },
+  "drafting": {
+    "source": "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+    "alt": "An architect drawing a plan by hand with a scale rule",
+    "width": 1600,
+    "height": 900,
+    "tone": "#605d59"
+  },
+  "press": {
+    "source": "https://images.unsplash.com/photo-1503694978374-8a2fa686963a",
+    "alt": "Newspapers running off a printing press",
+    "width": 1600,
+    "height": 1068,
+    "tone": "#767571"
+  },
+  "working-table": {
+    "source": "https://images.unsplash.com/photo-1623303647440-967d26b95b47",
+    "alt": "A team working at a table covered with printed charts and notes",
+    "width": 1600,
+    "height": 1086,
+    "tone": "#7e755f"
+  },
+  "abuja-arcade": {
+    "source": "https://images.unsplash.com/photo-1696744999160-02e02ab8754a",
+    "alt": "A tall red-brick arcade between office towers in Abuja",
+    "width": 1600,
+    "height": 2133,
+    "tone": "#757170"
+  },
+  "audience": {
+    "source": "https://images.unsplash.com/photo-1540575467063-178a50c2df87",
+    "alt": "An audience seated in a darkened conference hall",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#15181e"
+  },
+  "portrait-blue": {
+    "source": "https://images.unsplash.com/photo-1638727295415-286409421143",
+    "alt": "A woman in a white shirt photographed against a deep blue wall",
+    "credit": "Unsplash",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#3f738b"
+  },
+  "lekki-bridge": {
+    "source": "https://images.unsplash.com/photo-1719314073622-9399d167725b",
+    "alt": "The cable-stayed Lekki-Ikoyi Link Bridge in Lagos against a pale sky",
+    "credit": "Unsplash",
+    "width": 1600,
+    "height": 2228,
+    "tone": "#b8c1c7"
+  },
+  "lekki-bridge-wide": {
+    "source": "https://images.unsplash.com/photo-1719314313652-d9835e0c52c3",
+    "alt": "The Lekki-Ikoyi Link Bridge spanning the Lagos lagoon",
+    "credit": "Unsplash",
+    "width": 1600,
+    "height": 1704,
+    "tone": "#d1d6df"
+  },
+  "blue-curve": {
+    "source": "https://images.unsplash.com/photo-1608507777998-7b4f2c269120",
+    "alt": "A curved facade of blue glass rising into a blue sky",
+    "credit": "Unsplash",
+    "width": 1600,
+    "height": 900,
+    "tone": "#1052b4"
+  },
+  "white-tower": {
+    "source": "https://images.unsplash.com/photo-1565677662992-a1219883c01a",
+    "alt": "The edge of a white tower against a clear blue sky",
+    "credit": "Unsplash",
+    "width": 1600,
+    "height": 1200,
+    "tone": "#2e5399"
+  },
+  "blue-facade": {
+    "source": "https://images.unsplash.com/photo-1564772255985-c7ca28689bae",
+    "alt": "A building facade in saturated blue",
+    "credit": "Unsplash",
+    "width": 1600,
+    "height": 2400,
+    "tone": "#133982"
+  },
+  "glass-grid": {
+    "source": "https://images.unsplash.com/photo-1481026469463-66327c86e544",
+    "alt": "A grid of glass panels on a building, seen from below",
+    "credit": "Unsplash",
+    "width": 1600,
+    "height": 1527,
+    "tone": "#cedfe6"
+  },
+  "white-curves": {
+    "source": "https://images.unsplash.com/photo-1518005108369-12a8b1c429a0",
+    "alt": "Curving white balconies of a high-rise against blue sky",
+    "credit": "Unsplash",
+    "width": 1600,
+    "height": 2133,
+    "tone": "#658dab"
+  },
+  "exec-blue": {
+    "source": "https://images.unsplash.com/photo-1616805765352-beedbad46b2a",
+    "alt": "A man in a blue suit jacket with arms folded",
+    "credit": "Unsplash",
+    "width": 1600,
+    "height": 2400,
+    "tone": "#768ea7"
+  },
+  "glass-blue": {
+    "source": "https://images.unsplash.com/photo-1706101299176-292d8c5e470e",
+    "alt": "Translucent curves of blue glass catching soft light",
+    "width": 1600,
+    "height": 897,
+    "tone": "#2b4c6a"
+  },
+  "render-fold": {
+    "source": "https://images.unsplash.com/photo-1653299832314-5d3dc1e5a83c",
+    "alt": "A sculptural blue form folding in on itself",
+    "width": 1600,
+    "height": 2844,
+    "tone": "#1a234e"
+  },
+  "render-lines": {
+    "source": "https://images.unsplash.com/photo-1672750771479-5ea73e9439ce",
+    "alt": "Blue lines and curves sweeping across a dark field",
+    "width": 1600,
+    "height": 900,
+    "tone": "#6e80a6"
+  },
+  "render-dark": {
+    "source": "https://images.unsplash.com/photo-1734792314921-e2ab82d18921",
+    "alt": "A blue abstract form on a black ground",
+    "width": 1600,
+    "height": 2400,
+    "tone": "#012b57"
+  },
+  "render-waves": {
+    "source": "https://images.unsplash.com/photo-1687197180710-b2b9484a3c5f",
+    "alt": "Layered blue waves in soft gradient",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#06365c"
+  },
+  "glass-dark": {
+    "source": "https://images.unsplash.com/photo-1683464276767-bfac74dbd6b8",
+    "alt": "Dark glass shapes with sharp edges refracting light",
+    "width": 1600,
+    "height": 3199,
+    "tone": "#3e4349"
+  },
+  "cubes-blue": {
+    "source": "https://images.unsplash.com/photo-1671519821564-ced7e41ee7ae",
+    "alt": "Floating reflective cubes in blue and violet",
+    "width": 1600,
+    "height": 1216,
+    "tone": "#4c3c79"
+  },
+  "meeting-table": {
+    "source": "https://images.unsplash.com/photo-1758518730037-a16581a040e8",
+    "alt": "Professionals in discussion around a meeting table",
+    "width": 1600,
+    "height": 900,
+    "tone": "#8e9496"
+  },
+  "boardroom": {
+    "source": "https://images.unsplash.com/photo-1462826303086-329426d1aef5",
+    "alt": "A long boardroom table with chairs, ready for a meeting",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#858983"
+  },
+  "team-laptops": {
+    "source": "https://images.unsplash.com/photo-1573164574572-cb89e39749b4",
+    "alt": "Colleagues working together at a table with laptops",
+    "width": 1600,
+    "height": 1068,
+    "tone": "#a6a098"
+  },
+  "team-women": {
+    "source": "https://images.unsplash.com/photo-1573164574397-dd250bc8a598",
+    "alt": "Three women in conversation at a table",
+    "width": 1600,
+    "height": 1068,
+    "tone": "#b3a8a2"
+  },
+  "team-room": {
+    "source": "https://images.unsplash.com/photo-1573164574511-73c773193279",
+    "alt": "A team gathered in a bright room",
+    "width": 1600,
+    "height": 1068,
+    "tone": "#a4998c"
+  },
+  "portrait-suit": {
+    "source": "https://images.unsplash.com/photo-1631131431211-4f768d89087d",
+    "alt": "A man in a blue suit, smiling",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#767f65"
+  },
+  "laptop-man": {
+    "source": "https://images.unsplash.com/photo-1719314319573-6abae1dfc520",
+    "alt": "A man holding a laptop, mid-conversation",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#929190"
+  },
+  "woman-blue": {
+    "source": "https://images.unsplash.com/photo-1666867540898-aaa1993ffabc",
+    "alt": "A woman in a blue shirt",
+    "width": 1600,
+    "height": 2398,
+    "tone": "#738da1"
+  },
+  "ward": {
+    "source": "https://images.unsplash.com/photo-1517120026326-d87759a7b63b",
+    "alt": "A clinician in blue scrubs walking past an incubator",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#bfc4c1"
+  },
+  "corridor": {
+    "source": "https://images.unsplash.com/photo-1586534738560-438efdf1d205",
+    "alt": "A man walking down a long, bright corridor",
+    "width": 1600,
+    "height": 900,
+    "tone": "#a7a8a3"
+  },
+  "solar": {
+    "source": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9",
+    "alt": "Rows of solar panels across a green field, from above",
+    "width": 1600,
+    "height": 1199,
+    "tone": "#4f604d"
+  },
+  "port": {
+    "source": "https://images.unsplash.com/photo-1782398138711-72c37bce4b38",
+    "alt": "A busy container port seen from above",
+    "width": 1600,
+    "height": 1022,
+    "tone": "#57625b"
+  },
+  "fields": {
+    "source": "https://images.unsplash.com/photo-1749192901144-1c2eda035c2b",
+    "alt": "Farmland at golden hour, from above",
+    "width": 1600,
+    "height": 1200,
+    "tone": "#8c804c"
+  },
+  "lecture": {
+    "source": "https://images.unsplash.com/photo-1758270705067-0d7edee57af0",
+    "alt": "Students listening in a lecture hall",
+    "width": 1600,
+    "height": 900,
+    "tone": "#86706f"
+  },
+  "microphones": {
+    "source": "https://images.unsplash.com/photo-1555201441-7b166836415d",
+    "alt": "Four microphones lined up at a podium",
+    "width": 1600,
+    "height": 1067,
+    "tone": "#3b3b3d"
+  },
+  "wireframe": {
+    "source": "https://images.unsplash.com/photo-1600132806608-231446b2e7af",
+    "alt": "A website wireframe sketched by hand on paper",
+    "width": 1600,
+    "height": 1200,
+    "tone": "#c2c0c3"
+  },
+  "tablet-studio": {
+    "source": "https://images.unsplash.com/photo-1744686909434-fd158fca1c35",
+    "alt": "A designer working on a tablet in a studio",
+    "width": 1600,
+    "height": 2000,
+    "tone": "#aea388"
+  },
+  "towers": {
+    "source": "https://images.unsplash.com/photo-1627327053419-fe894c4650ed",
+    "alt": "Office towers rising into a blue sky",
+    "width": 1600,
+    "height": 2133,
+    "tone": "#667575"
+  },
+  "auditorium": {
+    "source": "https://images.unsplash.com/photo-1641735123823-90856d1efd39",
+    "alt": "Rows of empty seats in a dark auditorium",
+    "width": 1600,
+    "height": 2400,
+    "tone": "#1a1a1a"
+  }
+}
