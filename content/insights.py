@@ -13,7 +13,7 @@ ESSAYS = [
     {
         "slug": "the-joins",
         "type": "Perspective",
-        "title": "Institutions rarely fail inside one discipline. They fail at the joins.",
+        "title": "Where transformations fail: the gaps between disciplines",
         "dek": "Strategy, systems, security, service and reputation are bought separately and fail together. The remedy is organisational before it is technical.",
         "practice": "Strategy and Transformation",
         "date": "October 2026",
@@ -60,7 +60,7 @@ ESSAYS = [
 <h2>5. Which suppliers could hurt us?</h2>
 <p>Many incidents begin at a supplier: a payroll provider, a software vendor, a cloud host. Ask which third parties hold sensitive data or run critical systems, what the contracts require of them, and how their security is checked.</p>
 <h2>6. Can we restore, and have we tried?</h2>
-<p>A backup that has never been restored is only a hope. Ask when the institution last recovered a critical service from backup under realistic conditions, how long it took, and what went wrong.</p>
+<p>An untested backup offers little assurance. Ask when the institution last recovered a critical service from backup under realistic conditions, how long it took, and what went wrong.</p>
 <h2>7. When did we last rehearse?</h2>
 <p>The most reliable predictor of a good response is practice. Ask when the board last took part in an incident exercise alongside management and the communications team, and what changed as a result. If the answer is never, that is the first thing to fix.</p>
 <h2>A note on answers</h2>
@@ -70,7 +70,7 @@ ESSAYS = [
     {
         "slug": "the-handover",
         "type": "Perspective",
-        "title": "The handover: an institution is finished only when it can run without its founder",
+        "title": "The handover: building institutions that outlast their founders",
         "dek": "Institutions are built to outlast the people who start them. Designing for succession from the first day is harder, and more important, than it sounds.",
         "practice": "Strategy and Transformation",
         "date": "October 2026",
@@ -79,7 +79,7 @@ ESSAYS = [
         "image_alt": "Curving white balconies of a high-rise against blue sky",
         "body": """
 <p>Every founder faces the same temptation. In the early days, it is faster to decide everything personally, to hold the relationships, to keep the important knowledge in one's head. The institution grows around that person like a vine around a post. Then, one day, the post is removed, by retirement, appointment elsewhere or simple exhaustion, and the vine falls over.</p>
-<p>The pattern is common in public programmes launched by a single minister, in universities shaped by a long-serving vice-chancellor, in companies built by a founder who never quite let go. The work was real. The results were real. But the institution was never finished, because it could not stand without its builder.</p>
+<p>The pattern is common in public programmes launched by a single minister, in universities shaped by a long-serving vice-chancellor, in companies built by a founder who never quite let go. The work and the results were real, yet the institution remained unfinished, because it could not stand without its builder.</p>
 <h2>Designing to be replaced</h2>
 <p>The alternative is to design the institution, from the beginning, to be handed over. That means writing down what is usually left unwritten: how decisions are made, by whom, under what rules, and how those rules can be changed. It means building governance that can say no to the founder. It means training successors early and giving them real authority to match their titles.</p>
 <p class="ad-pull">An institution is finished only when it can carry on without the person who built it.</p>
@@ -131,9 +131,9 @@ image: assets/photos/{e['image']}-1600.webp
 
 <section class="ad-sec ad-mist" aria-labelledby="more-title">
   <div class="ad-wrap">
-    <div class="ad-head"><div><p class="ad-eyebrow">Continue reading</p><h2 id="more-title" class="ad-h2">More <em>perspectives.</em></h2></div></div>
+    <div class="ad-head"><div><p class="ad-eyebrow">Continue reading</p><h2 id="more-title" class="ad-h2">Related insights</h2></div></div>
     <div class="ad-cards">{more}
-      <a class="ad-card" style="background:var(--ink);color:#fff;border-color:transparent" href="{{{{root}}}}review/"><span class="ad-tile__type" style="color:var(--sky)">The Aldier Review</span><h3>A journal of how institutions actually work. Issue one in preparation.</h3><span class="ad-link" style="color:var(--sky)">About the Review {{{{arrow}}}}</span></a>
+      <a class="ad-card" style="background:var(--ink);color:#fff;border-color:transparent" href="{{{{root}}}}review/"><span class="ad-tile__type" style="color:var(--sky)">The Aldier Review</span><h3>The firm's journal of institutional performance. Coming soon.</h3><span class="ad-link" style="color:var(--sky)">About the Review {{{{arrow}}}}</span></a>
     </div>
   </div>
 </section>
@@ -148,7 +148,7 @@ def index() -> str:
     )
     return f"""<!--
 title: Insights
-description: Perspectives, briefings and research from Aldier on how institutions decide, build, protect, design and explain.
+description: Perspectives, board briefings and research from across Aldier's practices.
 header: light
 slug: insights
 image: assets/photos/working-table-1600.webp
@@ -156,8 +156,8 @@ image: assets/photos/working-table-1600.webp
 <section class="ad-rhero">
   <div class="ad-wrap">
     <p class="ad-eyebrow">Insights</p>
-    <h1 id="page-title" class="ad-h1">What we are <em>learning.</em></h1>
-    <p class="ad-lede">Perspectives, board briefings and research from across the firm, signed by the people who wrote them and checked by someone who did not.</p>
+    <h1 id="page-title" class="ad-h1">Insights</h1>
+    <p class="ad-lede">Perspectives, board briefings and research from across Aldier's practices on the decisions in front of institutions.</p>
   </div>
 </section>
 
@@ -165,24 +165,24 @@ image: assets/photos/working-table-1600.webp
   <div class="ad-wrap ad-split" style="align-items:start">
     <a class="ad-tile ad-tile--shade" style="min-height:560px" href="{{{{root}}}}insights/{lead['slug']}/" data-reveal>
       <div class="ad-tile__media">{img(lead['image'], '', '(max-width: 900px) 100vw, 50vw')}</div>
-      <p class="ad-tile__type">Lead perspective</p>
+      <p class="ad-tile__type">Featured perspective</p>
       <h2 id="lead-title" class="ad-h3" style="color:#fff">{lead['title']}</h2>
       <p>{lead['dek']}</p>
     </a>
     <div data-reveal>
-      <p class="ad-eyebrow">Latest</p>
+      <p class="ad-eyebrow">Latest insights</p>
       <ul class="ad-latest ad-mt-s">{rest}</ul>
-      <div class="ad-soon ad-mt"><span class="ad-tag ad-tag--soon">Coming soon</span><p>The Institute's first working papers and the first issue of the Aldier Review are in preparation.</p></div>
+      <div class="ad-soon ad-mt"><span class="ad-tag ad-tag--soon">Coming soon</span><p>Working papers from the Aldier Institute and the first issue of the Aldier Review.</p></div>
     </div>
   </div>
 </section>
 
 <section class="ad-sec ad-on-light" aria-labelledby="prog-title">
   <div class="ad-wrap">
-    <div class="ad-head"><div><p class="ad-eyebrow">Programmes</p><h2 id="prog-title" class="ad-h2">Research, a journal <em>and a film series.</em></h2></div></div>
+    <div class="ad-head"><div><p class="ad-eyebrow">Research and publishing</p><h2 id="prog-title" class="ad-h2">Our programmes</h2></div></div>
     <div class="ad-bento" style="grid-auto-rows:220px">
       <a class="ad-tile ad-tile--shade ad-bento__a" href="{{{{root}}}}institute/"><div class="ad-tile__media">{img('render-waves', '', '(max-width: 960px) 100vw, 50vw')}</div><p class="ad-tile__type">Research</p><h3>The Aldier Institute</h3><p>Independent research on institutional performance, public trust and digital resilience.</p></a>
-      <a class="ad-tile ad-tile--royal ad-bento__b" href="{{{{root}}}}review/"><span class="ad-tag ad-tag--soon">In preparation</span><p class="ad-tile__type">Journal</p><h3>The Aldier Review</h3></a>
+      <a class="ad-tile ad-tile--royal ad-bento__b" href="{{{{root}}}}review/"><span class="ad-tag ad-tag--soon">Coming soon</span><p class="ad-tile__type">Journal</p><h3>The Aldier Review</h3></a>
       <a class="ad-tile ad-tile--shade" href="{{{{root}}}}conversations/"><div class="ad-tile__media"><img src="{{{{root}}}}assets/film/meeting.jpg" alt="" loading="lazy"></div><p class="ad-tile__type">Film series</p><h3>Aldier Conversations</h3></a>
       <a class="ad-tile ad-tile--light" href="{{{{root}}}}board-programme/"><p class="ad-tile__type" style="color:var(--blue)">For directors</p><h3>The Board Programme</h3></a>
     </div>
@@ -193,8 +193,8 @@ image: assets/photos/working-table-1600.webp
   <div class="ad-wrap ad-split">
     <div>
       <p class="ad-eyebrow">The Aldier Briefing</p>
-      <h2 id="brief-title" class="ad-h2">One considered note, <em>once a month.</em></h2>
-      <p class="ad-lede">New perspectives, research and programme news, with a short reading list from beyond the firm. Unsubscribe at any time by replying to any issue.</p>
+      <h2 id="brief-title" class="ad-h2">Our latest thinking, once a month</h2>
+      <p class="ad-lede">The Aldier Briefing brings new perspectives and research to leaders of institutions, with a short reading list from beyond the firm. Unsubscribe at any time.</p>
     </div>
     <form class="ad-sub" action="{{{{root}}}}api/enquiry" method="post" data-enquiry>
       <input type="hidden" name="form" value="briefing">

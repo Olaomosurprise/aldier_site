@@ -33,9 +33,9 @@ DEPTH = [
         "name": "Public Sector and Government",
         "hero": "civic-hall",
         "hero_alt": "A stone civic building facing an empty square",
-        "title_html": "Services citizens can see <em>working.</em>",
-        "lede": "Governments are judged by what citizens experience: the licence issued on time, the clinic that is open, the payment that arrives. We help public bodies design reforms that survive contact with delivery, and the changes of leadership that follow.",
-        "statement": "A reform announced is a promise. A reform delivered is a service. <em>Most of the work lies in between,</em> in procurement, systems, people and the patience to see it through.",
+        "purpose": "Public services that deliver for citizens, and reforms that last.",
+        "lede": "Governments are judged by what citizens experience: the licence issued on time, the clinic that is open, the payment that arrives. We help ministries, agencies and regulators design reforms that can be delivered, and build the institutions that sustain them through changes of leadership.",
+        "statement": "Most of the work of reform happens after the announcement: in procurement, systems, people and the persistence to see it through. That is where we spend most of our time.",
         "questions": [
             ("How do we turn a manifesto into a delivery plan?", "Priorities translated into programmes with owners, budgets and measures that a delivery unit can track week by week."),
             ("Which services should go digital first, and how?", "Services chosen by volume and pain, redesigned around citizens, and built on infrastructure the state owns."),
@@ -46,17 +46,17 @@ DEPTH = [
         ],
         "inner": "towers",
         "inner_alt": "Office towers rising into a blue sky",
-        "spot_title": "Delivery units that report the truth",
-        "spot_text": "A delivery unit is only as useful as the honesty of its reports. We help governments set up small, senior units that track commitments against evidence, escalate problems early and publish progress that citizens can check.",
+        "spot_title": "Building delivery units",
+        "spot_text": "We help governments establish small, senior delivery units that track commitments against evidence, escalate problems early and publish progress that citizens can check.",
     },
     {
         "slug": "education",
         "name": "Education",
         "hero": "university-colonnade",
         "hero_alt": "The white colonnade of a university building",
-        "title_html": "Universities run as the small <em>cities they are.</em>",
-        "lede": "A university is a city: housing, transport, catering, security, health, finance and a workforce of thousands, all in service of teaching and research. We help institutions run the city well, so that the academy can do its work, and graduates leave ready for theirs.",
-        "statement": "Students judge a university by the hostel, the portal, the queue and the job that follows. <em>The academic mission depends on everything around it.</em>",
+        "purpose": "Universities that run well, and graduates ready for work.",
+        "lede": "A university runs housing, transport, catering, security, health and finance for thousands of people, all in service of teaching and research. We help universities and education systems strengthen their finances, operations and student experience, and prepare graduates for the labour market.",
+        "statement": "Students judge a university by its hostels, its portals, its queues and the jobs that follow graduation. The academic mission depends on everything around it.",
         "questions": [
             ("How do we fund growth without raising fees beyond reach?", "Financial strategy, auxiliary enterprise and partnerships that diversify income responsibly."),
             ("How do we modernise the student journey?", "Admissions, records, payments and learning platforms redesigned around students and staff."),
@@ -67,8 +67,8 @@ DEPTH = [
         ],
         "inner": "lecture",
         "inner_alt": "Students listening in a lecture hall",
-        "spot_title": "GENIVY, our founding engagement",
-        "spot_text": "Aldier designed GENIVY, an international guild of students, from its economic model and constitution to its identity and platform, and serves as its Founding Partner.",
+        "spot_title": "GENIVY",
+        "spot_text": "GENIVY is the international guild of students that Aldier helped found. Owned by its members, it organises the work already present on university campuses and pays students to run it. Aldier serves as its Founding Partner.",
         "spot_link": "work/genivy/",
     },
     {
@@ -76,9 +76,9 @@ DEPTH = [
         "name": "Financial Services",
         "hero": "bank-portico",
         "hero_alt": "The columned portico of a stone banking hall",
-        "title_html": "Money kept safe, available <em>and explained.</em>",
-        "lede": "Financial institutions are trusted with other people's savings, and that trust is regulated, audited and tested daily. We help banks, insurers, payments companies and their regulators grow without weakening the controls that customers never see but always depend on.",
-        "statement": "Customers rarely think about their bank until something goes wrong. <em>The work is to make sure that moment never comes,</em> and to be ready for the day it does.",
+        "purpose": "Growth with the controls that customers and regulators depend on.",
+        "lede": "Financial institutions are trusted with other people's savings, and that trust is regulated, audited and tested every day. We help banks, insurers, payments companies and their regulators grow while strengthening the controls their customers depend on.",
+        "statement": "Customers rarely think about their bank until something goes wrong. Our work is to make that moment rare, and to ensure the institution is ready when it comes.",
         "questions": [
             ("Where should we grow, and what should we stop?", "Portfolio strategy, product economics and the operating model to serve chosen segments profitably."),
             ("How do we replace core systems safely?", "Core banking and insurance platform selection, migration planning and delivery assurance."),
@@ -89,8 +89,8 @@ DEPTH = [
         ],
         "inner": "blue-facade",
         "inner_alt": "A building facade in saturated blue",
-        "spot_title": "Controls designed in from the first sketch",
-        "spot_text": "When a bank launches a product, the controls should launch with it. We bring risk, security and compliance specialists into product teams from the first sketch, so growth and safety move at the same pace.",
+        "spot_title": "Risk and compliance designed into products",
+        "spot_text": "We bring risk, security and compliance specialists into product teams from the first design, so that new products launch with their controls in place.",
     },
 ]
 
@@ -98,10 +98,10 @@ DEPTH = [
 def depth_page(d: dict) -> str:
     qs = "".join(f'<div class="ad-card"><h3>{q}</h3><p>{a}</p></div>' for q, a in d["questions"])
     link = d.get("spot_link")
-    spot_link = f'<a class="ad-link" href="{{{{root}}}}{link}">Read the case {{{{arrow}}}}</a>' if link else '<a class="ad-link" href="{{root}}contact/">Discuss with a partner {{arrow}}</a>'
+    spot_link = f'<a class="ad-link" href="{{{{root}}}}{link}">Read the case study {{{{arrow}}}}</a>' if link else '<a class="ad-link" href="{{root}}contact/">Contact us {{arrow}}</a>'
     return f"""<!--
 title: {d['name']}
-description: {d['lede'].split('. ')[0]}.
+description: {d['purpose']} {d['lede']}
 header: dark
 slug: industry-{d['slug']}
 image: assets/photos/{d['hero']}-1600.webp
@@ -111,9 +111,9 @@ preload: assets/photos/{d['hero']}-1600.webp
   <div class="ad-phero__media">{img(d['hero'], d['hero_alt'], '100vw').replace(' loading="lazy"', ' fetchpriority="high"')}</div>
   <div class="ad-wrap ad-phero__body">
     <p class="ad-phero__crumb"><a href="{{{{root}}}}industries/">Industries</a> / {d['name']}</p>
-    <p class="ad-eyebrow">Industry of depth</p>
-    <h1 id="page-title" class="ad-h1">{d['title_html']}</h1>
-    <p class="ad-lede">{d['lede']}</p>
+    <p class="ad-eyebrow">Industry</p>
+    <h1 id="page-title" class="ad-h1">{d['name']}</h1>
+    <p class="ad-lede"><b>{d['purpose']}</b> {d['lede']}</p>
   </div>
 </section>
 
@@ -123,7 +123,7 @@ preload: assets/photos/{d['hero']}-1600.webp
 
 <section class="ad-sec ad-mist" aria-labelledby="q-title">
   <div class="ad-wrap">
-    <div class="ad-head"><div><p class="ad-eyebrow">Questions we help leaders answer</p><h2 id="q-title" class="ad-h2">Six questions <em>on the agenda.</em></h2></div><p>Each draws on more than one practice, which is why one partner leads and one team stays to the end.</p></div>
+    <div class="ad-head"><div><p class="ad-eyebrow">How we help clients</p><h2 id="q-title" class="ad-h2">Questions we help leaders answer</h2></div><p>Most draw on more than one of our practices.</p></div>
     <div class="ad-cards">{qs}</div>
   </div>
 </section>
@@ -132,7 +132,7 @@ preload: assets/photos/{d['hero']}-1600.webp
   <div class="ad-wrap ad-split ad-split--flip">
     <div class="ad-split__media" data-reveal>{img(d['inner'], d['inner_alt'])}</div>
     <div data-reveal>
-      <p class="ad-eyebrow">In practice</p>
+      <p class="ad-eyebrow">Our work</p>
       <h2 id="spot-title" class="ad-h2">{d['spot_title']}</h2>
       <p class="ad-lede">{d['spot_text']}</p>
       {spot_link}
@@ -142,7 +142,7 @@ preload: assets/photos/{d['hero']}-1600.webp
 
 <section class="ad-sec ad-on-light" aria-labelledby="pr-title">
   <div class="ad-wrap">
-    <div class="ad-head"><div><p class="ad-eyebrow">Practices engaged</p><h2 id="pr-title" class="ad-h2">All five practices, <em>one sector team.</em></h2></div></div>
+    <div class="ad-head"><div><p class="ad-eyebrow">Capabilities</p><h2 id="pr-title" class="ad-h2">Our practices in {d['name']}</h2></div></div>
     <ul class="ad-pills">
       <li><a href="{{{{root}}}}practices/strategy/">Strategy and Transformation</a></li>
       <li><a href="{{{{root}}}}practices/technology/">Technology and Data</a></li>
@@ -156,8 +156,8 @@ preload: assets/photos/{d['hero']}-1600.webp
 <section class="ad-sec ad-royal ad-close" aria-labelledby="close-title">
   <div class="ad-wrap">
     <p class="ad-eyebrow" style="justify-content:center">{d['name']}</p>
-    <h2 id="close-title" class="ad-h2 ad-mt-s">Speak with the <em>sector team.</em></h2>
-    <p class="ad-lede">Tell us what you are facing. A partner who knows the sector will reply personally.</p>
+    <h2 id="close-title" class="ad-h2 ad-mt-s">Connect with our {d['name']} team</h2>
+    <p class="ad-lede">Tell us about the challenge in front of you. A partner will reply in confidence.</p>
     <div class="ad-actions"><a class="ad-btn ad-btn--light" href="{{{{root}}}}contact/?topic={d['name'].replace(' ', '%20')}">Contact us {{{{arrow}}}}</a></div>
   </div>
 </section>
@@ -170,12 +170,12 @@ def index() -> str:
         for s, n, t, deep in ALL
     )
     tiles = "".join(
-        f'<a class="ad-tile ad-tile--shade" href="{{{{root}}}}industries/{d["slug"]}/" data-reveal><div class="ad-tile__media">{img(d["hero"], "", "(max-width: 900px) 100vw, 33vw")}</div><p class="ad-tile__type">Industry of depth</p><h3>{d["name"]}</h3><p>{d["lede"].split(". ")[0]}.</p></a>'
+        f'<a class="ad-tile ad-tile--shade" href="{{{{root}}}}industries/{d["slug"]}/" data-reveal><div class="ad-tile__media">{img(d["hero"], "", "(max-width: 900px) 100vw, 33vw")}</div><p class="ad-tile__type">Industry</p><h3>{d["name"]}</h3><p>{d["purpose"]}</p></a>'
         for d in DEPTH
     )
     return f"""<!--
 title: Industries
-description: Aldier serves fifteen industries, with its deepest knowledge in the public sector, education and financial services.
+description: Aldier serves institutions across fifteen industries, with dedicated teams for the public sector, education and financial services.
 header: dark
 slug: industries
 image: assets/film/city.jpg
@@ -185,30 +185,30 @@ preload: assets/film/city.jpg
   <div class="ad-phero__media">{video('city')}</div>
   <div class="ad-wrap ad-phero__body">
     <p class="ad-eyebrow">Industries</p>
-    <h1 id="page-title" class="ad-h1">Fifteen industries. <em>Three of depth.</em></h1>
-    <p class="ad-lede">We serve institutions across the economy, and have built our deepest knowledge where decisions reach the most citizens, students and savers.</p>
+    <h1 id="page-title" class="ad-h1">Industries</h1>
+    <p class="ad-lede">We serve institutions across fifteen industries, with dedicated teams for the public sector, education and financial services, where decisions reach the most citizens, students and savers.</p>
   </div>
 </section>
 
 <section class="ad-sec ad-on-light" aria-labelledby="depth-title">
   <div class="ad-wrap">
-    <div class="ad-head"><div><p class="ad-eyebrow">Industries of depth</p><h2 id="depth-title" class="ad-h2">Where we have gone <em>furthest.</em></h2></div><p>Dedicated sector teams, a research agenda through the Aldier Institute and partners who have spent their careers in these institutions.</p></div>
+    <div class="ad-head"><div><p class="ad-eyebrow">Featured industries</p><h2 id="depth-title" class="ad-h2">Our focus industries</h2></div><p>Dedicated sector teams, supported by research through the Aldier Institute.</p></div>
     <div class="ad-depth" style="margin-top:0">{tiles}</div>
   </div>
 </section>
 
 <section class="ad-sec ad-mist" aria-labelledby="all-title">
   <div class="ad-wrap">
-    <div class="ad-head"><div><p class="ad-eyebrow">Across the economy</p><h2 id="all-title" class="ad-h2">All fifteen <em>industries.</em></h2></div><p>For industries beyond our three of depth, we assemble the team from the practices the problem needs, with specialist advisers where the sector demands them.</p></div>
+    <div class="ad-head"><div><p class="ad-eyebrow">Across the economy</p><h2 id="all-title" class="ad-h2">All industries</h2></div><p>In every industry, we build each team from the practices the engagement requires, with specialist advisers where the sector demands them.</p></div>
     <ul class="ad-ilist">{items}</ul>
   </div>
 </section>
 
 <section class="ad-sec ad-royal ad-close" aria-labelledby="close-title">
   <div class="ad-wrap">
-    <h2 id="close-title" class="ad-h2">Your industry, <em>your question.</em></h2>
-    <p class="ad-lede">Whatever the sector, the first conversation is with a partner, and it is in confidence.</p>
-    <div class="ad-actions"><a class="ad-btn ad-btn--light" href="{{{{root}}}}contact/">Start a conversation {{{{arrow}}}}</a></div>
+    <h2 id="close-title" class="ad-h2">Discuss your industry's priorities</h2>
+    <p class="ad-lede">Tell us about your organisation and the challenge in front of it. A partner will reply in confidence.</p>
+    <div class="ad-actions"><a class="ad-btn ad-btn--light" href="{{{{root}}}}contact/">Contact us {{{{arrow}}}}</a></div>
   </div>
 </section>
 """

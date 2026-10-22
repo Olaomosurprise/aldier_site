@@ -35,15 +35,15 @@ NAV = [
     {
         "label": "Industries",
         "href": "industries/",
-        "intro": "Fifteen industries, with the deepest knowledge where decisions reach the most people.",
+        "intro": "We serve institutions across fifteen industries, with dedicated teams for the public sector, education and financial services.",
         "columns": [
-            ("Industries of depth", [
+            ("Focus industries", [
                 ("Public Sector and Government", "industries/public-sector/"),
                 ("Education", "industries/education/"),
                 ("Financial Services", "industries/financial-services/"),
             ]),
             ("Across the economy", [
-                ("All fifteen industries", "industries/"),
+                ("All industries", "industries/"),
                 ("Healthcare and Life Sciences", "industries/#healthcare"),
                 ("Energy, Power and Natural Resources", "industries/#energy"),
                 ("Telecoms, Media and Technology", "industries/#tmt"),
@@ -54,11 +54,11 @@ NAV = [
         ],
     },
     {
-        "label": "Practices",
+        "label": "Capabilities",
         "href": "practices/",
-        "intro": "Five disciplines, one team, one partner accountable from the first decision to the public announcement.",
+        "intro": "Five practices serving the full agenda of an institution, engaged individually or together.",
         "columns": [
-            ("Practices", [
+            ("Our practices", [
                 ("Strategy and Transformation", "practices/strategy/"),
                 ("Technology and Data", "practices/technology/"),
                 ("Cybersecurity and Digital Risk", "practices/cybersecurity/"),
@@ -67,8 +67,8 @@ NAV = [
             ]),
         ],
         "featured": [
-            ("Aldier Studio", "Design, film and digital products, made by the people who advised on them.", "studio/"),
-            ("The Board Programme", "Private briefings and rehearsals for boards on risk, technology and reputation.", "board-programme/"),
+            ("Aldier Studio", "The design and build studio of Aldier.", "studio/"),
+            ("The Board Programme", "Briefings and simulations for directors on risk, technology and reputation.", "board-programme/"),
         ],
     },
     {
@@ -78,15 +78,15 @@ NAV = [
     {
         "label": "Insights",
         "href": "insights/",
-        "intro": "What we are learning, published when it is ready and signed by the people who wrote it.",
+        "intro": "Perspectives, board briefings and research from across our practices.",
         "columns": [
-            ("Read", [
-                ("All perspectives", "insights/"),
-                ("The joins", "insights/the-joins/"),
+            ("Featured insights", [
+                ("All insights", "insights/"),
+                ("Where transformations fail", "insights/the-joins/"),
                 ("Before the breach", "insights/before-the-breach/"),
                 ("The handover", "insights/the-handover/"),
             ]),
-            ("Programmes", [
+            ("Research and publishing", [
                 ("The Aldier Institute", "institute/"),
                 ("The Aldier Review", "review/"),
                 ("Aldier Conversations", "conversations/"),
@@ -94,16 +94,16 @@ NAV = [
             ]),
         ],
         "featured": [
-            ("The Aldier Review", "The firm's journal of institutional performance. The first issue is in preparation.", "review/"),
+            ("The Aldier Review", "The journal of Aldier. Coming soon.", "review/"),
             ("Aldier Conversations", "Leaders in conversation about the decisions that shaped their institutions.", "conversations/"),
         ],
     },
     {
         "label": "About",
         "href": "about/",
-        "intro": "A multidisciplinary firm built around one rule: the people who advise also answer for the result.",
+        "intro": "Aldier is a multidisciplinary advisory firm serving governments, universities, financial institutions and companies.",
         "columns": [
-            ("The firm", [
+            ("Who we are", [
                 ("About Aldier", "about/"),
                 ("How we work", "about/#how-we-work"),
                 ("Independence", "about/#independence"),
@@ -116,7 +116,7 @@ NAV = [
             ]),
         ],
         "featured": [
-            ("GENIVY", "Aldier is Founding Partner to an international guild of students.", "work/genivy/"),
+            ("GENIVY", "The international guild of students that Aldier helped found.", "work/genivy/"),
         ],
     },
     {
@@ -140,7 +140,7 @@ FOOTER = [
         ("Aldier Conversations", "conversations/"),
         ("The Board Programme", "board-programme/"),
     ]),
-    ("The firm", [
+    ("Aldier", [
         ("About Aldier", "about/"),
         ("Industries", "industries/"),
         ("Our work", "work/"),
@@ -197,7 +197,7 @@ def footer(brief: bool = True) -> str:
         for head, links in FOOTER
     )
     brief_html = """<div class="ad-foot__brief" id="footer-briefing">
-      <div><p class="ad-eyebrow">The Aldier Briefing</p><h2>One considered note a month on the decisions institutions face.</h2></div>
+      <div><p class="ad-eyebrow">The Aldier Briefing</p><h2>Our latest perspectives and research, once a month.</h2></div>
       <form class="ad-sub" action="{{root}}api/enquiry" method="post" data-enquiry>
         <input type="hidden" name="form" value="briefing">
         <label class="ad-vh" for="foot-email">Email address</label>
