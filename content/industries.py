@@ -280,7 +280,7 @@ def page(d: dict) -> str:
     tabs += [("practices", "Capabilities"), ("contact", "Contact")]
     return f"""<!--
 title: {d['name']}
-description: {d['purpose']} {d['lede']}
+description: {d['purpose']} How Aldier helps organisations in {d['name'].replace(' and ', ' and ')}.
 header: dark
 slug: industry-{d['slug']}
 image: assets/photos/{d['hero']}-1600.webp
@@ -335,7 +335,7 @@ description: Aldier serves organisations across fifteen industries, bringing str
 header: dark
 slug: industries
 image: assets/film/city.jpg
-preload: assets/film/city.jpg
+preload: assets/film/city.webp
 -->
 <section class="ad-phero" aria-labelledby="page-title">
   <div class="ad-phero__media">{video('city')}</div>

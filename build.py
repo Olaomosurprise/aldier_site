@@ -20,6 +20,7 @@ Usage:
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import sys
@@ -28,7 +29,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src"
 DIST = ROOT / "dist"
-SITE = "https://aldier.co"
+# The public address of the site. Set SITE_URL in the Cloudflare Pages project when the domain changes.
+SITE = os.environ.get("SITE_URL", "https://aldier-site.pages.dev").rstrip("/")
 
 # Main navigation. Each entry opens a panel: columns of links on the left and
 # up to three featured programmes on the right.
@@ -227,6 +229,22 @@ def footer(brief: bool = True) -> str:
 </footer>"""
 
 
+def schema(data: dict, canonical: str, site: str, image: str) -> str:
+    """Structured data, as the leading firms publish it, so search engines understand the firm and its articles."""
+    org = {"@type": "Organization", "@id": f"{site}/#organization", "name": "Aldier", "url": f"{site}/",
+           "logo": f"{site}/assets/brand/apple-touch-icon.png",
+           "description": "Aldier is a multidisciplinary advisory firm working across strategy, technology, cybersecurity, design and communications.",
+           "sameAs": ["https://www.instagram.com/aldierco/"]}
+    graph = [org]
+    if canonical.rstrip("/") == site:
+        graph.append({"@type": "WebSite", "@id": f"{site}/#website", "url": f"{site}/", "name": "Aldier", "publisher": {"@id": f"{site}/#organization"},
+                      "potentialAction": {"@type": "SearchAction", "target": f"{site}/search/?q={{query}}", "query-input": "required name=query"}})
+    if data.get("slug") == "essay":
+        graph.append({"@type": "Article", "headline": data["title"], "description": data["description"], "image": f"{site}/{image}",
+                      "mainEntityOfPage": canonical, "publisher": {"@id": f"{site}/#organization"}, "author": {"@id": f"{site}/#organization"}, "inLanguage": "en-GB"})
+    return '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False) + "</script>"
+
+
 def page(data: dict, body: str, path: Path) -> str:
     depth = len(path.relative_to(SRC).parts) - 1
     root = "/" if data.get("absolute") == "yes" else "../" * depth
@@ -251,6 +269,15 @@ def page(data: dict, body: str, path: Path) -> str:
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{data['description']}">
 <meta property="og:image" content="{SITE}/{image}">
+<meta property="og:url" content="{canonical}">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{data['description']}">
+<meta name="twitter:image" content="{SITE}/{image}">
+<link rel="apple-touch-icon" href="{root}assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="{root}site.webmanifest">
+{schema(data, canonical, SITE, image)}
 <meta name="theme-color" content="#0b0e1c">
 <link rel="icon" href="{root}assets/brand/aldier-mark.svg" type="image/svg+xml">
 <link rel="preload" href="{root}assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -329,14 +356,22 @@ def main() -> int:
     )
     sm_body = f"""<section class="ad-rhero"><div class="ad-wrap"><p class="ad-eyebrow">Site map</p><h1 id="page-title" class="ad-h1">Site map</h1><p class="ad-lede">Every page on the Aldier website.</p></div></section>
 <section class="ad-sec ad-sec--tight"><div class="ad-wrap ad-sitemap">{cols}</div></section>"""
-    pages.append((SRC / "sitemap" / "index.html", {"title": "Site map", "description": "Every page on the Aldier website.", "header": "light", "slug": "legal"}, sm_body))
+    pages.append((SRC / "sitemap" / "index.html", {"title": "Site map", "description": "A complete list of pages on the Aldier website, grouped by section.", "header": "light", "slug": "legal"}, sm_body))
     for source, data, body in pages:
         out = DIST / source.relative_to(SRC)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(page(data, body, source), encoding="utf-8")
         count += 1
     shutil.copytree(ROOT / "assets", DIST / "assets", ignore=shutil.ignore_patterns("photos.json", ".DS_Store", "fraunces-*", "LICENSE-fraunces.txt"))
-    for name in ("_headers", "_redirects", "robots.txt"):
+    css = DIST / "assets" / "css" / "aldier.css"
+    text = re.sub(r"/\*.*?\*/", "", css.read_text(encoding="utf-8"), flags=re.S)
+    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"\s*([{};,>])\s*", r"\1", text).replace(";}", "}")
+    css.write_text(text.strip(), encoding="utf-8")
+    (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
+    (DIST / "site.webmanifest").write_text(json.dumps({"name": "Aldier", "short_name": "Aldier", "start_url": "/", "display": "browser", "background_color": "#ffffff", "theme_color": "#0b0e1c",
+        "icons": [{"src": "/assets/brand/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}, {"src": "/assets/brand/icon-512.png", "sizes": "512x512", "type": "image/png"}]}), encoding="utf-8")
+    for name in ("_headers", "_redirects"):
         if (ROOT / name).exists():
             shutil.copy(ROOT / name, DIST / name)
     urls = sorted(

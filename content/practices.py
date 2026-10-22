@@ -128,7 +128,7 @@ def video(name: str, cls: str = "", ambient: bool = False) -> str:
     amb = " data-ambient" if ambient else ""
     autoplay = "" if ambient else " autoplay loop"
     return (
-        f'<video class="{cls}" muted playsinline{autoplay} preload="metadata" poster="{{{{root}}}}assets/film/{name}.jpg"{amb} aria-hidden="true">'
+        f'<video class="{cls}" muted playsinline{autoplay} preload="metadata" poster="{{{{root}}}}assets/film/{name}.webp"{amb} aria-hidden="true">'
         f'<source src="{{{{root}}}}assets/film/{name}.webm" type="video/webm"><source src="{{{{root}}}}assets/film/{name}.mp4" type="video/mp4"></video>'
     )
 
@@ -221,11 +221,11 @@ def page(p: dict) -> str:
     slug, title = p["insight"]
     return f"""<!--
 title: {p['name']}
-description: {p['purpose']} {p['lede']}
+description: {p['purpose']} How Aldier's {p['name']} practice helps clients.
 header: dark
 slug: practice-{p['slug']}
 image: assets/film/{p['film']}.jpg
-preload: assets/film/{p['film']}.jpg
+preload: assets/film/{p['film']}.webp
 -->
 <section class="ad-phero" aria-labelledby="page-title">
   <div class="ad-phero__media">{video(p['film'])}</div>
@@ -277,7 +277,7 @@ preload: assets/film/{p['film']}.jpg
 def index() -> str:
     rows = "".join(
         f"""<a class="ad-acc__item{' is-open' if i == 0 else ''}" href="{{{{root}}}}practices/{p['slug']}/">
-        <video muted loop playsinline preload="none" poster="{{{{root}}}}assets/film/{p['film']}.jpg" aria-hidden="true"><source data-src="{{{{root}}}}assets/film/{p['film']}.webm" type="video/webm"><source data-src="{{{{root}}}}assets/film/{p['film']}.mp4" type="video/mp4"></video>
+        <video muted loop playsinline preload="none" poster="{{{{root}}}}assets/film/{p['film']}.webp" aria-hidden="true"><source data-src="{{{{root}}}}assets/film/{p['film']}.webm" type="video/webm"><source data-src="{{{{root}}}}assets/film/{p['film']}.mp4" type="video/mp4"></video>
         <div class="ad-acc__body"><span class="ad-acc__no">{p['no']}</span><span class="ad-acc__name">{p['name']}</span><div class="ad-acc__more"><div><p>{p['purpose']}</p><span class="ad-link">Explore the practice {{{{arrow}}}}</span></div></div></div>
       </a>"""
         for i, p in enumerate(PRACTICES)
@@ -288,11 +288,11 @@ def index() -> str:
     )
     return f"""<!--
 title: Practices
-description: Aldier advises institutions across five practices: strategy and transformation, technology and data, cybersecurity and digital risk, design and experience, and communications and public affairs.
+description: Aldier's five practices: strategy, technology and data, cybersecurity, design and experience, and communications and public affairs.
 header: dark
 slug: practices
 image: assets/film/civic.jpg
-preload: assets/film/civic.jpg
+preload: assets/film/civic.webp
 -->
 <section class="ad-phero" aria-labelledby="page-title">
   <div class="ad-phero__media">{video('civic')}</div>

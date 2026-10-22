@@ -184,7 +184,7 @@ image: assets/photos/working-table-1600.webp
     <div class="ad-bento" style="grid-auto-rows:220px">
       <a class="ad-tile ad-tile--shade ad-bento__a" href="{{{{root}}}}institute/"><div class="ad-tile__media">{img('render-waves', '', '(max-width: 960px) 100vw, 50vw')}</div><p class="ad-tile__type">Research</p><h3>The Aldier Institute</h3><p>Independent research on institutional performance, public trust and digital resilience.</p></a>
       <a class="ad-tile ad-tile--royal ad-bento__b" href="{{{{root}}}}review/"><span class="ad-tag ad-tag--soon">Coming soon</span><p class="ad-tile__type">Journal</p><h3>The Aldier Review</h3></a>
-      <a class="ad-tile ad-tile--shade" href="{{{{root}}}}conversations/"><div class="ad-tile__media"><img src="{{{{root}}}}assets/film/meeting.jpg" alt="" loading="lazy"></div><p class="ad-tile__type">Film series</p><h3>Aldier Conversations</h3></a>
+      <a class="ad-tile ad-tile--shade" href="{{{{root}}}}conversations/"><div class="ad-tile__media"><img src="{{{{root}}}}assets/film/meeting.webp" alt="" loading="lazy"></div><p class="ad-tile__type">Film series</p><h3>Aldier Conversations</h3></a>
       <a class="ad-tile ad-tile--light" href="{{{{root}}}}board-programme/"><p class="ad-tile__type" style="color:var(--blue)">For directors</p><h3>The Board Programme</h3></a>
     </div>
   </div>
