@@ -107,6 +107,7 @@ header: light
 slug: essay
 image: assets/photos/{e['image']}-1600.webp
 -->
+<div class="ad-progress" aria-hidden="true"><i></i></div>
 <article>
 <header class="ad-rhero">
   <div class="ad-wrap">
@@ -122,7 +123,7 @@ image: assets/photos/{e['image']}-1600.webp
     <aside class="ad-article__aside" aria-label="About this piece">
       <div><b>Practice</b><a class="ad-link" href="{{{{root}}}}practices/">{e['practice']}</a></div>
       <div><b>Review</b>Checked by a reviewer outside the authors' team before publication.</div>
-      <div><b>Share</b><a class="ad-link" href="mailto:?subject={e['title'].replace(' ', '%20')}">By email</a></div>
+      <div><b>Share</b><span class="ad-share" data-share><a href="#" data-share-to="linkedin">LinkedIn</a><a href="#" data-share-to="x">X</a><a href="#" data-share-to="email">Email</a><button type="button" data-share-to="copy">Copy link</button></span></div>
     </aside>
     <div class="ad-prose">{e['body']}</div>
   </div>

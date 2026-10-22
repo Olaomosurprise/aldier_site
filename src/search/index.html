@@ -1,0 +1,24 @@
+<!--
+title: Search
+description: Search the Aldier website.
+header: light
+slug: search
+brief: no
+-->
+<section class="ad-rhero" style="padding-bottom:0">
+  <div class="ad-wrap">
+    <p class="ad-eyebrow">Search</p>
+    <h1 id="page-title" class="ad-h1">Search</h1>
+    <form class="ad-search" role="search" data-search action="{{root}}search/" method="get">
+      <label class="ad-vh" for="q">Search the site</label>
+      <input id="q" name="q" type="search" placeholder="Search practices, industries, insights and more" autocomplete="off" autofocus>
+      <button class="ad-btn" type="submit">Search</button>
+    </form>
+  </div>
+</section>
+<section class="ad-sec ad-sec--tight" aria-live="polite">
+  <div class="ad-wrap">
+    <p class="ad-note" data-search-count></p>
+    <ul class="ad-results" data-search-results></ul>
+  </div>
+</section>

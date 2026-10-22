@@ -121,6 +121,7 @@ PRACTICES = [
 ]
 
 BY_SLUG = {p["slug"]: p for p in PRACTICES}
+APPROACH = {"phases": "Our approach", "split": "Independence", "timeline": "Incident simulation", "studio": "Aldier Studio", "quote": "Our standard"}
 
 
 def video(name: str, cls: str = "", ambient: bool = False) -> str:
@@ -140,10 +141,16 @@ def img(key: str, alt: str = "", sizes: str = "(max-width: 900px) 100vw, 50vw", 
     )
 
 
+def subnav(title: str, tabs: list) -> str:
+    """A sticky in-page navigation bar, as on the practice and industry pages of the leading firms."""
+    links = "".join(f'<li><a href="#{i}">{label}</a></li>' for i, label in tabs)
+    return f'<nav class="ad-subnav" aria-label="On this page" data-subnav><div class="ad-wrap"><span class="ad-subnav__title">{title}</span><ul>{links}</ul></div></nav>'
+
+
 def feature(p: dict) -> str:
     kind = p["feature"]
     if kind == "phases":
-        return """<section class="ad-sec ad-dark" aria-labelledby="how-title">
+        return """<section class="ad-sec ad-dark" id="approach" aria-labelledby="how-title">
   <div class="ad-wrap">
     <div class="ad-head"><div><p class="ad-eyebrow">Our approach</p><h2 id="how-title" class="ad-h2">From diagnosis to delivery</h2></div><p>The team that diagnoses the problem stays to deliver the answer, and hands over only when the client's own people are ready to lead.</p></div>
     <ol class="ad-steps">
@@ -155,9 +162,9 @@ def feature(p: dict) -> str:
   </div>
 </section>"""
     if kind == "split":
-        return f"""<section class="ad-sec ad-ice" aria-labelledby="side-title">
+        return f"""<section class="ad-sec ad-ice" id="approach" aria-labelledby="side-title">
   <div class="ad-wrap ad-split">
-    <div class="ad-split__media ad-split__media--frame" data-reveal>{img(p['image'], 'A long corridor of server cabinets in a data hall')}</div>
+    <div class="ad-split__media ad-split__media--frame" data-reveal>{img('pr-technology', 'A team working together on laptops')}</div>
     <div data-reveal>
       <p class="ad-eyebrow">Independence</p>
       <h2 id="side-title" class="ad-h2">Independent of every vendor</h2>
@@ -167,7 +174,7 @@ def feature(p: dict) -> str:
   </div>
 </section>"""
     if kind == "timeline":
-        return """<section class="ad-sec ad-night" aria-labelledby="day-title">
+        return """<section class="ad-sec ad-night" id="approach" aria-labelledby="day-title">
   <div class="ad-wrap">
     <div class="ad-head"><div><p class="ad-eyebrow">Incident simulation</p><h2 id="day-title" class="ad-h2">Rehearsing the first hours of a breach</h2></div><p>Our simulation runs a realistic incident in real time, with directors, technical leads and spokespeople taking the decisions that would fall to them.</p></div>
     <ol class="ad-steps">
@@ -179,19 +186,19 @@ def feature(p: dict) -> str:
   </div>
 </section>"""
     if kind == "studio":
-        return f"""<section class="ad-sec ad-on-light" aria-labelledby="studio-title">
+        return f"""<section class="ad-sec ad-on-light" id="approach" aria-labelledby="studio-title">
   <div class="ad-wrap">
     <div class="ad-head"><div><p class="ad-eyebrow">Aldier Studio</p><h2 id="studio-title" class="ad-h2">Design and production under one roof</h2></div><p>Designers, film-makers, architects and engineers work alongside the strategists who shaped the brief.</p></div>
     <div class="ad-mosaic">
-      <div class="ad-tile ad-tile--shade ad-span-6 ad-row-2 ad-wide-m" data-reveal><div class="ad-tile__media">{img('tablet-studio', 'A designer working on a tablet in a studio', '(max-width: 960px) 100vw, 50vw')}</div><p class="ad-tile__type">Digital products</p><h3>Designed to accessibility standards, and measured once live.</h3></div>
-      <div class="ad-tile ad-tile--shade ad-span-6" data-reveal><div class="ad-tile__media">{img('drafting', 'An architect drawing a plan by hand', '(max-width: 960px) 100vw, 50vw')}</div><p class="ad-tile__type">Spatial design</p><h3>Branches, campuses and offices planned around the service they house.</h3></div>
-      <div class="ad-tile ad-tile--shade ad-span-6" data-reveal><div class="ad-tile__media">{img('loupe', 'A printer’s loupe on colour proofs', '(max-width: 960px) 100vw, 50vw')}</div><p class="ad-tile__type">Identity</p><h3>Every colour, typeface and mark specified for consistent use at scale.</h3></div>
+      <div class="ad-tile ad-tile--shade ad-span-6 ad-row-2 ad-wide-m" data-reveal><div class="ad-tile__media">{img('pr-design', 'A designer working on a drawing tablet beside colour swatches', '(max-width: 960px) 100vw, 50vw')}</div><p class="ad-tile__type">Digital products</p><h3>Designed to accessibility standards, and measured once live.</h3></div>
+      <div class="ad-tile ad-tile--shade ad-span-6" data-reveal><div class="ad-tile__media">{img('abuja-arcade', 'A brick arcade framed by apartment blocks', '(max-width: 960px) 100vw, 50vw')}</div><p class="ad-tile__type">Spatial design</p><h3>Branches, campuses and offices planned around the service they house.</h3></div>
+      <div class="ad-tile ad-tile--shade ad-span-6" data-reveal><div class="ad-tile__media">{img('render-lines', '', '(max-width: 960px) 100vw, 50vw')}</div><p class="ad-tile__type">Identity</p><h3>Every colour, typeface and mark specified for consistent use at scale.</h3></div>
     </div>
     <p class="ad-mt"><a class="ad-link" href="{{{{root}}}}studio/">Visit Aldier Studio {{{{arrow}}}}</a></p>
   </div>
 </section>"""
     if kind == "quote":
-        return f"""<section class="ad-sec ad-dark" aria-labelledby="principle-title">
+        return f"""<section class="ad-sec ad-dark" id="approach" aria-labelledby="principle-title">
   <div class="ad-wrap ad-split">
     <div data-reveal>
       <p class="ad-eyebrow">Our standard</p>
@@ -229,24 +236,24 @@ preload: assets/film/{p['film']}.jpg
     <p class="ad-lede"><b>{p['purpose']}</b> {p['lede']}</p>
   </div>
 </section>
-
-<section class="ad-sec ad-statement ad-on-light" aria-label="Our perspective">
-  <div class="ad-wrap">
-    <p class="ad-eyebrow">Our perspective</p>
-    <p class="ad-lit" data-light>{p['question']}</p>
-  </div>
-</section>
-
-<section class="ad-sec ad-mist" aria-labelledby="services-title">
+{subnav(p["name"], [("help", "How we help clients"), ("perspective", "Our perspective"), ("approach", APPROACH[p["feature"]]), ("related", "Insights"), ("contact", "Contact")])}
+<section class="ad-sec ad-mist" id="help" aria-labelledby="services-title">
   <div class="ad-wrap">
     <div class="ad-head"><div><p class="ad-eyebrow">Capabilities</p><h2 id="services-title" class="ad-h2">How we help clients</h2></div><p>Clients engage these capabilities individually or in combination with other practices.</p></div>
     <ol class="ad-steps">{services}</ol>
   </div>
 </section>
 
+<section class="ad-sec ad-statement ad-on-light" id="perspective" aria-label="Our perspective">
+  <div class="ad-wrap">
+    <p class="ad-eyebrow">Our perspective</p>
+    <p class="ad-lit" data-light>{p['question']}</p>
+  </div>
+</section>
+
 {feature(p)}
 
-<section class="ad-sec ad-on-light" aria-labelledby="joins-title">
+<section class="ad-sec ad-on-light" id="related" aria-labelledby="joins-title">
   <div class="ad-wrap">
     <div class="ad-head"><div><p class="ad-eyebrow">Explore further</p><h2 id="joins-title" class="ad-h2">Related practices and insights</h2></div></div>
     <div class="ad-cards">
@@ -256,7 +263,7 @@ preload: assets/film/{p['film']}.jpg
   </div>
 </section>
 
-<section class="ad-sec ad-royal ad-close" aria-labelledby="close-title">
+<section class="ad-sec ad-royal ad-close" id="contact" aria-labelledby="close-title">
   <div class="ad-wrap">
     <p class="ad-eyebrow" style="justify-content:center">{p['name']}</p>
     <h2 id="close-title" class="ad-h2 ad-mt-s">Connect with our {p['name']} practice</h2>
@@ -292,7 +299,7 @@ preload: assets/film/civic.jpg
   <div class="ad-wrap ad-phero__body">
     <p class="ad-eyebrow">Capabilities</p>
     <h1 id="page-title" class="ad-h1">Our practices</h1>
-    <p class="ad-lede">Aldier advises governments, universities, financial institutions and companies through five practices. Clients engage one, or bring several together on a single engagement.</p>
+    <p class="ad-lede">Aldier advises clients through five practices. Clients engage one, or bring several together on a single engagement.</p>
   </div>
 </section>
 
@@ -312,7 +319,7 @@ preload: assets/film/civic.jpg
 
 <section class="ad-sec ad-mist" aria-labelledby="model-title">
   <div class="ad-wrap ad-split">
-    <div class="ad-split__media" data-reveal>{img('team-laptops', 'Colleagues working together at a table with laptops')}</div>
+    <div class="ad-split__media" data-reveal>{img('working-table', 'Colleagues working through papers at a table')}</div>
     <div data-reveal>
       <p class="ad-eyebrow">How we work</p>
       <h2 id="model-title" class="ad-h2">Integrated teams, led by one partner</h2>

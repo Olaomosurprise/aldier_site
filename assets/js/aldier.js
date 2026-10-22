@@ -231,7 +231,7 @@
       service: { title: "Service redesign", practices: ["Design and Experience", "Technology and Data"], text: "Begin by watching the service as it is used today. We map where people abandon it, redesign the journey, the product and, where it matters, the physical space, and build what is needed to run it." },
       trust: { title: "Rebuilding trust", practices: ["Communications and Public Affairs", "Strategy and Transformation"], text: "Begin with an assessment of where confidence was lost, and with whom. We set out what must change in practice, then how and when to say so to regulators, investors, staff and the public." },
     };
-    const SECTOR = { government: "government", university: "your university", bank: "your bank", company: "your company", nonprofit: "your organisation", health: "your health system" };
+    const SECTOR = { government: "a public body", university: "an education institution", bank: "a financial institution", company: "your company", investor: "an investor", nonprofit: "your organisation", health: "a health system" };
     let sector = null;
     const step2 = finder.querySelector("[data-step='2']");
     const result = finder.querySelector(".ad-finder__result");
@@ -350,4 +350,101 @@
       });
     });
   });
+})();
+
+/* In-page navigation, search, article tools and back to top. */
+(() => {
+  "use strict";
+  const root = (document.querySelector(".ad-logo") || {}).getAttribute ? document.querySelector(".ad-logo").getAttribute("href") : "/";
+
+  // Sticky in-page navigation: highlight the section in view.
+  const sub = document.querySelector("[data-subnav]");
+  if (sub && "IntersectionObserver" in window) {
+    const links = [...sub.querySelectorAll("a[href^='#']")];
+    const sections = links.map((a) => document.getElementById(a.getAttribute("href").slice(1))).filter(Boolean);
+    const set = (id) => links.forEach((a) => a.setAttribute("aria-current", a.getAttribute("href") === "#" + id ? "true" : "false"));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) set(e.target.id); });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    sections.forEach((s) => io.observe(s));
+    links.forEach((a) => a.addEventListener("click", () => {
+      const item = a.closest("li"); if (item) item.scrollIntoView({ inline: "center", block: "nearest" });
+    }));
+  }
+
+  // Site search, from a small index built with the site.
+  const form = document.querySelector("[data-search]");
+  if (form) {
+    const input = form.querySelector("input");
+    const list = document.querySelector("[data-search-results]");
+    const count = document.querySelector("[data-search-count]");
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    let index = null;
+    const run = (q) => {
+      const terms = q.toLowerCase().split(/\s+/).filter((t) => t.length > 1);
+      if (!terms.length) { list.innerHTML = ""; count.textContent = ""; return; }
+      const scored = index.map((e) => {
+        const t = e.t.toLowerCase(), d = e.d.toLowerCase(), x = e.x.toLowerCase();
+        let score = 0;
+        for (const term of terms) {
+          if (t.includes(term)) score += 10; else if (d.includes(term)) score += 4; else if (x.includes(term)) score += 1; else return null;
+        }
+        return { e, score };
+      }).filter(Boolean).sort((a, b) => b.score - a.score);
+      const mark = (s) => { let out = esc(s); terms.forEach((term) => { out = out.replace(new RegExp("(" + term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi"), "<mark>$1</mark>"); }); return out; };
+      count.textContent = scored.length ? `${scored.length} result${scored.length === 1 ? "" : "s"} for “${q}”` : `No results for “${q}”. Try a broader term, or browse the site map.`;
+      list.innerHTML = scored.slice(0, 30).map(({ e }) => `<li><a href="${root}${e.u}"><span class="ad-tile__type" style="color:var(--blue)">${esc(e.k)}</span><h2>${mark(e.t)}</h2><p>${mark(e.d)}</p></a></li>`).join("");
+    };
+    const params = new URLSearchParams(location.search);
+    const start = params.get("q") || "";
+    input.value = start;
+    fetch(root + "search.json").then((r) => r.json()).then((data) => { index = data; if (start) run(start); });
+    form.addEventListener("submit", (ev) => {
+      ev.preventDefault();
+      const q = input.value.trim();
+      history.replaceState(null, "", "?q=" + encodeURIComponent(q));
+      if (index) run(q);
+    });
+    let timer;
+    input.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(() => index && run(input.value.trim()), 180); });
+  }
+
+  // Reading progress on articles.
+  const bar = document.querySelector(".ad-progress i");
+  const article = document.querySelector("article");
+  if (bar && article) {
+    const tick = () => {
+      const r = article.getBoundingClientRect();
+      const total = r.height - window.innerHeight;
+      bar.style.transform = `scaleX(${Math.min(1, Math.max(0, -r.top / (total > 0 ? total : 1)))})`;
+    };
+    window.addEventListener("scroll", () => requestAnimationFrame(tick), { passive: true });
+    tick();
+  }
+
+  // Share links.
+  document.querySelectorAll("[data-share]").forEach((box) => {
+    const url = location.href.split("#")[0];
+    const title = document.title;
+    box.querySelectorAll("[data-share-to]").forEach((el) => {
+      const to = el.dataset.shareTo;
+      if (to === "linkedin") el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+      if (to === "x") el.href = "https://x.com/intent/post?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(title);
+      if (to === "email") el.href = "mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(url);
+      if (to === "linkedin" || to === "x") { el.target = "_blank"; el.rel = "noopener"; }
+      if (to === "copy") el.addEventListener("click", () => {
+        (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(() => { el.textContent = "Link copied"; }, () => { el.textContent = url; });
+      });
+    });
+  });
+
+  // Back to top on long pages.
+  if (document.documentElement.scrollHeight > window.innerHeight * 3) {
+    const btn = document.createElement("button");
+    btn.type = "button"; btn.className = "ad-top"; btn.setAttribute("aria-label", "Back to top");
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
+    document.body.appendChild(btn);
+    window.addEventListener("scroll", () => btn.classList.toggle("is-on", window.scrollY > window.innerHeight * 1.5), { passive: true });
+  }
 })();

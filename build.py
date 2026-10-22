@@ -19,6 +19,7 @@ Usage:
 
 from __future__ import annotations
 
+import json
 import re
 import shutil
 import sys
@@ -90,7 +91,7 @@ NAV = [
                 ("The Aldier Institute", "institute/"),
                 ("The Aldier Review", "review/"),
                 ("Aldier Conversations", "conversations/"),
-                ("The Aldier Briefing", "insights/#briefing"),
+                ("Subscribe", "subscribe/"),
             ]),
         ],
         "featured": [
@@ -101,18 +102,20 @@ NAV = [
     {
         "label": "About",
         "href": "about/",
-        "intro": "Aldier is a multidisciplinary advisory firm serving governments, universities, financial institutions and companies.",
+        "intro": "A multidisciplinary advisory firm. We help leaders set direction and see it through.",
         "columns": [
             ("Who we are", [
                 ("About Aldier", "about/"),
                 ("How we work", "about/#how-we-work"),
-                ("Independence", "about/#independence"),
+                ("Professional standards", "about/standards/"),
+                ("Social impact", "about/social-impact/"),
                 ("Our work", "work/"),
             ]),
             ("Connect", [
+                ("Newsroom", "newsroom/"),
                 ("Careers", "careers/"),
                 ("Contact", "contact/"),
-                ("The Aldier Briefing", "insights/#briefing"),
+                ("Subscribe", "subscribe/"),
             ]),
         ],
         "featured": [
@@ -145,6 +148,8 @@ FOOTER = [
         ("Industries", "industries/"),
         ("Our work", "work/"),
         ("Insights", "insights/"),
+        ("Newsroom", "newsroom/"),
+        ("Social impact", "about/social-impact/"),
         ("Careers", "careers/"),
         ("Contact", "contact/"),
     ]),
@@ -216,7 +221,7 @@ def footer(brief: bool = True) -> str:
     </div>
     <div class="ad-foot__base">
       <span>&copy; 2026 Aldier. All rights reserved.</span>
-      <ul><li><a href="{{{{root}}}}privacy/">Privacy</a></li><li><a href="{{{{root}}}}terms/">Terms of use</a></li><li><a href="{{{{root}}}}accessibility/">Accessibility</a></li><li><a href="https://www.instagram.com/aldierco/" rel="noopener">Instagram</a></li></ul>
+      <ul><li><a href="{{{{root}}}}privacy/">Privacy</a></li><li><a href="{{{{root}}}}privacy/#cookies">Cookies</a></li><li><a href="{{{{root}}}}terms/">Terms of use</a></li><li><a href="{{{{root}}}}accessibility/">Accessibility</a></li><li><a href="{{{{root}}}}about/standards/">Professional standards</a></li><li><a href="{{{{root}}}}recruitment-fraud/">Recruitment fraud</a></li><li><a href="{{{{root}}}}sitemap/">Site map</a></li><li><a href="https://www.instagram.com/aldierco/" rel="noopener">Instagram</a></li></ul>
     </div>
   </div>
 </footer>"""
@@ -263,6 +268,7 @@ def page(data: dict, body: str, path: Path) -> str:
     </a>
     <nav class="ad-nav" id="ad-nav" aria-label="Main">
       <ul class="ad-nav__list">{menu()}</ul>
+      <a class="ad-search-link" href="{{{{root}}}}search/" aria-label="Search"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="7.5" cy="7.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m11.6 11.6 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span class="ad-search-link__label">Search</span></a>
       <a class="ad-btn ad-nav__cta" href="{{{{root}}}}contact/">Contact us</a>
     </nav>
     <button class="ad-menu" type="button" aria-expanded="false" aria-controls="ad-nav"><span class="ad-menu__bars" aria-hidden="true"><i></i><i></i></span><span class="ad-menu__label">Menu</span></button>
@@ -279,13 +285,48 @@ def page(data: dict, body: str, path: Path) -> str:
     return html.replace("{{arrow}}", ARROW).replace("{{root}}", root)
 
 
+def kind(url: str) -> str:
+    first = url.split("/")[0]
+    return {
+        "": "Pages", "practices": "Capabilities", "industries": "Industries", "insights": "Insights",
+        "studio": "Programmes", "institute": "Programmes", "review": "Programmes", "conversations": "Programmes", "board-programme": "Programmes",
+        "work": "Our work", "newsroom": "Newsroom", "about": "About", "careers": "Careers", "recruitment-fraud": "Careers",
+        "privacy": "Legal", "terms": "Legal", "accessibility": "Legal", "contact": "Pages", "subscribe": "Pages", "sitemap": "Legal",
+    }.get(first, "Pages")
+
+
 def main() -> int:
     if DIST.exists():
         shutil.rmtree(DIST)
     DIST.mkdir()
     count = 0
+    pages = []
     for source in sorted(SRC.rglob("*.html")):
         data, body = settings(source.read_text(encoding="utf-8"))
+        pages.append((source, data, body))
+    entries = []
+    for source, data, body in pages:
+        rel = source.relative_to(SRC)
+        if rel.name != "index.html" or str(rel.parent) in ("search",):
+            continue
+        url = "" if str(rel.parent) == "." else str(rel.parent).replace("\\", "/") + "/"
+        text = re.sub(r"<script.*?</script>|<[^>]+>", " ", body, flags=re.S)
+        text = re.sub(r"\{\{[a-z]+\}\}", " ", text)
+        entries.append({"t": data.get("title", ""), "d": data.get("description", ""), "u": url, "k": kind(url), "x": " ".join(text.split())[:1800]})
+    (DIST).mkdir(exist_ok=True)
+    (DIST / "search.json").write_text(json.dumps(entries, ensure_ascii=False), encoding="utf-8")
+    groups = {}
+    for e in sorted(entries, key=lambda e: e["u"]):
+        groups.setdefault(e["k"], []).append(e)
+    order = ["Pages", "Capabilities", "Industries", "Insights", "Programmes", "Our work", "Newsroom", "About", "Careers", "Legal"]
+    cols = "".join(
+        f'<div><h2 class="ad-eyebrow">{k}</h2><ul>' + "".join(f'<li><a href="{{{{root}}}}{e["u"]}">{e["t"]}</a></li>' for e in groups[k]) + "</ul></div>"
+        for k in order if k in groups
+    )
+    sm_body = f"""<section class="ad-rhero"><div class="ad-wrap"><p class="ad-eyebrow">Site map</p><h1 id="page-title" class="ad-h1">Site map</h1><p class="ad-lede">Every page on the Aldier website.</p></div></section>
+<section class="ad-sec ad-sec--tight"><div class="ad-wrap ad-sitemap">{cols}</div></section>"""
+    pages.append((SRC / "sitemap" / "index.html", {"title": "Site map", "description": "Every page on the Aldier website.", "header": "light", "slug": "legal"}, sm_body))
+    for source, data, body in pages:
         out = DIST / source.relative_to(SRC)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(page(data, body, source), encoding="utf-8")
