@@ -256,7 +256,7 @@ def page(data: dict, body: str, path: Path) -> str:
 <link rel="preload" href="{root}assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{root}assets/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 {preload_tag}
-<link rel="stylesheet" href="{root}assets/css/aldier.css">
+<link rel="stylesheet" href="{root}assets/css/aldier.css?v={VERSION}">
 </head>
 <body class="ad-page ad-page--{data.get('slug', 'page')}" data-header="{header_mode}">
 <a class="ad-skip" href="#main">Skip to content</a>
@@ -278,11 +278,15 @@ def page(data: dict, body: str, path: Path) -> str:
 {body.strip()}
 </main>
 {footer(data.get('brief', 'yes') != 'no')}
-<script src="{{{{root}}}}assets/js/aldier.js" defer></script>
+<script src="{{{{root}}}}assets/js/aldier.js?v={VERSION}" defer></script>
 </body>
 </html>
 """
     return html.replace("{{arrow}}", ARROW).replace("{{root}}", root)
+
+
+import hashlib
+VERSION = hashlib.sha1(b"".join((Path(__file__).resolve().parent / "assets" / f).read_bytes() for f in ("css/aldier.css", "js/aldier.js"))).hexdigest()[:10]
 
 
 def kind(url: str) -> str:
