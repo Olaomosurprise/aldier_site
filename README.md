@@ -22,7 +22,7 @@ Then open `dist/index.html`, or serve `dist/` with any static server.
 
 ## Hosting on Cloudflare Pages
 
-- Project: `aldier-site` (aldier-site.pages.dev)
+- Project: `aldier-site` (aldier.pages.dev)
 - Build command: `python3 build.py`
 - Output directory: `dist`
 - Production branch: `main`

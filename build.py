@@ -30,7 +30,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src"
 DIST = ROOT / "dist"
 # The public address of the site. Set SITE_URL in the Cloudflare Pages project when the domain changes.
-SITE = os.environ.get("SITE_URL", "https://aldier-site.pages.dev").rstrip("/")
+SITE = os.environ.get("SITE_URL", "https://aldier.pages.dev").rstrip("/")
 
 # Main navigation. Each entry opens a panel: columns of links on the left and
 # up to three featured programmes on the right.
