@@ -92,11 +92,13 @@ NAV = [
             ("Research and publishing", [
                 ("The Aldier Institute", "institute/"),
                 ("The Aldier Review", "review/"),
+                ("The Aldier Podcast", "podcast/"),
                 ("Aldier Conversations", "conversations/"),
                 ("Subscribe", "subscribe/"),
             ]),
         ],
         "featured": [
+            ("The Aldier Podcast", "Conversations with the people who build institutions. Season one coming soon.", "podcast/"),
             ("The Aldier Review", "The journal of Aldier. Coming soon.", "review/"),
             ("Aldier Conversations", "Leaders in conversation about the decisions that shaped their institutions.", "conversations/"),
         ],
@@ -142,6 +144,7 @@ FOOTER = [
         ("Aldier Studio", "studio/"),
         ("The Aldier Institute", "institute/"),
         ("The Aldier Review", "review/"),
+        ("The Aldier Podcast", "podcast/"),
         ("Aldier Conversations", "conversations/"),
         ("The Board Programme", "board-programme/"),
     ]),
@@ -157,6 +160,7 @@ FOOTER = [
     ]),
 ]
 
+CHEV = '<svg class="ad-chev" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>'
 ARROW = '<svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>'
 
 
@@ -217,13 +221,19 @@ def footer(brief: bool = True) -> str:
     return f"""<footer class="ad-foot">
   <div class="ad-wrap">
     {brief_html}
+    <div class="ad-foot__top">
+      <p class="ad-foot__tag">Clear decisions. <em>Lasting institutions.</em></p>
+      <ul class="ad-foot__quick"><li><a href="{{{{root}}}}careers/">Careers</a></li><li><a href="{{{{root}}}}insights/">Insights</a></li><li><a href="{{{{root}}}}podcast/">Podcast</a></li><li><a href="{{{{root}}}}newsroom/">Newsroom</a></li><li><a href="{{{{root}}}}about/">About</a></li><li><a href="{{{{root}}}}subscribe/">Subscribe</a></li></ul>
+      <div class="ad-foot__assist"><h2>How can we assist you?</h2><p>Tell us about the challenge in front of you. A partner reads every enquiry and replies in confidence.</p><a class="ad-btn ad-btn--light" href="{{{{root}}}}contact/">Contact us {ARROW}</a></div>
+    </div>
     <div class="ad-foot__main">
       <a class="ad-foot__logo" href="{{{{root}}}}"><img src="{{{{root}}}}assets/brand/aldier-logo-dark.svg" alt="Aldier" width="150" height="44"></a>
       <div class="ad-foot__cols">{cols}</div>
     </div>
+    <div class="ad-foot__follow"><span>Follow us</span><a href="https://www.instagram.com/aldierco/" rel="noopener" aria-label="Aldier on Instagram"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg></a></div>
     <div class="ad-foot__base">
       <span>&copy; 2026 Aldier. All rights reserved.</span>
-      <ul><li><a href="{{{{root}}}}privacy/">Privacy</a></li><li><a href="{{{{root}}}}privacy/#cookies">Cookies</a></li><li><a href="{{{{root}}}}terms/">Terms of use</a></li><li><a href="{{{{root}}}}accessibility/">Accessibility</a></li><li><a href="{{{{root}}}}about/standards/">Professional standards</a></li><li><a href="{{{{root}}}}recruitment-fraud/">Recruitment fraud</a></li><li><a href="{{{{root}}}}sitemap/">Site map</a></li><li><a href="https://www.instagram.com/aldierco/" rel="noopener">Instagram</a></li></ul>
+      <ul><li><a href="{{{{root}}}}privacy/">Privacy</a></li><li><a href="{{{{root}}}}privacy/#cookies">Cookies</a></li><li><a href="{{{{root}}}}terms/">Terms of use</a></li><li><a href="{{{{root}}}}accessibility/">Accessibility</a></li><li><a href="{{{{root}}}}about/standards/">Professional standards</a></li><li><a href="{{{{root}}}}recruitment-fraud/">Recruitment fraud</a></li><li><a href="{{{{root}}}}sitemap/">Site map</a></li></ul>
     </div>
   </div>
 </footer>"""
@@ -288,6 +298,7 @@ def page(data: dict, body: str, path: Path) -> str:
 <body class="ad-page ad-page--{data.get('slug', 'page')}" data-header="{header_mode}">
 <a class="ad-skip" href="#main">Skip to content</a>
 <header class="ad-header">
+  <div class="ad-util"><div class="ad-wrap ad-util__row"><ul><li><a href="{{{{root}}}}newsroom/">Newsroom</a></li><li><a href="{{{{root}}}}podcast/">Podcast</a></li><li><a href="{{{{root}}}}subscribe/">Subscribe</a></li><li><a href="{{{{root}}}}contact/">Contact</a></li></ul><span class="ad-util__loc"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 8h13M8 1.5c2 2 2.6 4.2 2.6 6.5S10 12.5 8 14.5M8 1.5C6 3.5 5.4 5.7 5.4 8S6 12.5 8 14.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Global &nbsp;|&nbsp; English</span></div></div>
   <div class="ad-wrap ad-header__row">
     <a class="ad-logo" href="{{{{root}}}}" aria-label="Aldier, home">
       <img class="ad-logo--onDark" src="{{{{root}}}}assets/brand/aldier-logo-dark.svg" alt="" width="128" height="37">
@@ -309,7 +320,7 @@ def page(data: dict, body: str, path: Path) -> str:
 </body>
 </html>
 """
-    return html.replace("{{arrow}}", ARROW).replace("{{root}}", root)
+    return html.replace("{{arrow}}", ARROW).replace("{{chev}}", CHEV).replace("{{root}}", root)
 
 
 import hashlib
@@ -321,7 +332,7 @@ def kind(url: str) -> str:
     return {
         "": "Pages", "practices": "Capabilities", "industries": "Industries", "insights": "Insights",
         "studio": "Programmes", "institute": "Programmes", "review": "Programmes", "conversations": "Programmes", "board-programme": "Programmes",
-        "work": "Our work", "newsroom": "Newsroom", "about": "About", "careers": "Careers", "recruitment-fraud": "Careers",
+        "work": "Our work", "newsroom": "Newsroom", "podcast": "Programmes", "about": "About", "careers": "Careers", "recruitment-fraud": "Careers",
         "privacy": "Legal", "terms": "Legal", "accessibility": "Legal", "contact": "Pages", "subscribe": "Pages", "sitemap": "Legal",
     }.get(first, "Pages")
 

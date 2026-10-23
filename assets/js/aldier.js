@@ -107,6 +107,7 @@
   const hero = document.querySelector("[data-films]");
   if (hero) {
     const films = [...hero.querySelectorAll(".ad-hero__film")];
+    const slides = [...hero.querySelectorAll(".ad-hero__slide")];
     const buttons = [...hero.querySelectorAll(".ad-chapters button")];
     const toggle = hero.querySelector(".ad-film-toggle");
     const DURATION = 7500;
@@ -125,6 +126,11 @@
           try { v.currentTime = 0; } catch (err) { /* not ready yet */ }
           v.play().catch(() => {});
         } else if (!on) v.pause();
+      });
+      slides.forEach((s, k) => {
+        s.classList.toggle("is-on", k === index);
+        s.querySelectorAll("a").forEach((l) => (l.tabIndex = k === index ? 0 : -1));
+        s.setAttribute("aria-hidden", String(k !== index));
       });
       buttons.forEach((b, k) => {
         b.setAttribute("aria-current", String(k === index));
@@ -447,4 +453,20 @@
     document.body.appendChild(btn);
     window.addEventListener("scroll", () => btn.classList.toggle("is-on", window.scrollY > window.innerHeight * 1.5), { passive: true });
   }
+})();
+
+/* Filter a list of insights by format */
+(() => {
+  document.querySelectorAll("[data-filterable]").forEach((box) => {
+    const chips = [...box.querySelectorAll("[data-filter]")];
+    const items = [...box.querySelectorAll(".ad-feed > li")];
+    const empty = box.querySelector(".ad-filter-empty");
+    chips.forEach((chip) => chip.addEventListener("click", () => {
+      const f = chip.dataset.filter;
+      chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+      let shown = 0;
+      items.forEach((li) => { const on = !f || li.dataset.type === f; li.hidden = !on; if (on) shown += 1; });
+      if (empty) empty.hidden = shown > 0;
+    }));
+  });
 })();

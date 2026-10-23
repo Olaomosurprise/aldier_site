@@ -3,7 +3,11 @@
 Run from the project root: python3 content/industries.py
 """
 
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from feed import latest  # noqa: E402
 
 from practices import img, video, subnav
 
@@ -277,7 +281,7 @@ def page(d: dict) -> str:
     tabs = [("help", "How we help clients"), ("perspective", "Our perspective")]
     if spot:
         tabs.append(("work", "Our work"))
-    tabs += [("practices", "Capabilities"), ("contact", "Contact")]
+    tabs += [("practices", "Capabilities"), ("insights", "Insights"), ("contact", "Contact")]
     return f"""<!--
 title: {d['name']}
 description: {d['purpose']} How Aldier helps organisations in {d['name'].replace(' and ', ' and ')}.
@@ -313,6 +317,12 @@ preload: assets/photos/{d['hero']}-1600.webp
     <ul class="ad-pills">{pills}</ul>
     <p class="ad-eyebrow ad-mt">Related industries</p>
     <div class="ad-depth">{related}</div>
+  </div>
+</section>
+
+<section class="ad-sec ad-on-light ad-pt-0" id="insights" aria-labelledby="latest-title">
+  <div class="ad-wrap">
+    {latest()}
   </div>
 </section>
 

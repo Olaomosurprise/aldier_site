@@ -6,98 +6,118 @@ slug: home
 preload: assets/film/decide.webp
 brief: no
 -->
-<section class="ad-hero" data-films aria-labelledby="hero-title">
+<section class="ad-hero ad-hero--stories" data-films aria-labelledby="hero-title">
   <div class="ad-hero__films" aria-hidden="true">
     <div class="ad-hero__film is-on"><video muted playsinline preload="metadata" poster="{{root}}assets/film/decide.webp"><source data-src="{{root}}assets/film/decide.webm" type="video/webm"><source data-src="{{root}}assets/film/decide.mp4" type="video/mp4"></video></div>
-    <div class="ad-hero__film"><video muted playsinline preload="none" poster="{{root}}assets/film/build.webp"><source data-src="{{root}}assets/film/build.webm" type="video/webm"><source data-src="{{root}}assets/film/build.mp4" type="video/mp4"></video></div>
+    <div class="ad-hero__film"><video muted playsinline preload="none" poster="{{root}}assets/film/civic.webp"><source data-src="{{root}}assets/film/civic.webm" type="video/webm"><source data-src="{{root}}assets/film/civic.mp4" type="video/mp4"></video></div>
     <div class="ad-hero__film"><video muted playsinline preload="none" poster="{{root}}assets/film/guard.webp"><source data-src="{{root}}assets/film/guard.webm" type="video/webm"><source data-src="{{root}}assets/film/guard.mp4" type="video/mp4"></video></div>
-    <div class="ad-hero__film"><video muted playsinline preload="none" poster="{{root}}assets/film/design.webp"><source data-src="{{root}}assets/film/design.webm" type="video/webm"><source data-src="{{root}}assets/film/design.mp4" type="video/mp4"></video></div>
+    <div class="ad-hero__film"><video muted playsinline preload="none" poster="{{root}}assets/film/build.webp"><source data-src="{{root}}assets/film/build.webm" type="video/webm"><source data-src="{{root}}assets/film/build.mp4" type="video/mp4"></video></div>
     <div class="ad-hero__film"><video muted playsinline preload="none" poster="{{root}}assets/film/communicate.webp"><source data-src="{{root}}assets/film/communicate.webm" type="video/webm"><source data-src="{{root}}assets/film/communicate.mp4" type="video/mp4"></video></div>
   </div>
   <div class="ad-wrap ad-hero__body">
-    <p class="ad-eyebrow">Strategy · Technology · Security · Design · Communications</p>
-    <h1 id="hero-title" class="ad-h1"><span class="ad-w"><span style="--i:0">Clear</span></span> <span class="ad-w"><span style="--i:1">decisions.</span></span> <span class="ad-w"><span style="--i:2"><em>Lasting</em></span></span> <span class="ad-w"><span style="--i:3"><em>institutions.</em></span></span></h1>
-    <p class="ad-hero__sub">Aldier is a multidisciplinary advisory firm. We help leaders set direction and see it through, bringing strategy, technology, cybersecurity, design and communications together in one firm.</p>
-    <div class="ad-hero__actions">
-      <a class="ad-btn ad-btn--light" href="{{root}}practices/">See what we do <svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-      <a class="ad-btn ad-btn--ghost" href="#where-to-start">Where to start</a>
+    <h1 id="hero-title" class="ad-vh">Aldier: clear decisions, lasting institutions</h1>
+    <div class="ad-hero__slides" aria-live="polite">
+      <div class="ad-hero__slide is-on">
+        <p class="ad-hero__kicker">Welcome to Aldier</p>
+        <p class="ad-hero__title">Clear decisions. <em>Lasting institutions.</em></p>
+        <p class="ad-hero__dek">One firm for strategy, technology, cybersecurity, design and communications, accountable from the first decision to the last mile of delivery.</p>
+        <a class="ad-hero__go" href="{{root}}practices/">See what we do {{arrow}}</a>
+      </div>
+      <div class="ad-hero__slide">
+        <p class="ad-hero__kicker">Case study <span>October 2026</span></p>
+        <p class="ad-hero__title">Founding a guild owned by its students</p>
+        <p class="ad-hero__dek">How Aldier designed GENIVY, from its constitution and economics to its identity and platform.</p>
+        <a class="ad-hero__go" href="{{root}}work/genivy/">Read the case study {{arrow}}</a>
+      </div>
+      <div class="ad-hero__slide">
+        <p class="ad-hero__kicker">Board briefing <span>October 2026</span></p>
+        <p class="ad-hero__title">Before the breach: seven questions for the board</p>
+        <p class="ad-hero__dek">What directors can ask this quarter, and the answers that should worry them.</p>
+        <a class="ad-hero__go" href="{{root}}insights/before-the-breach/">Read the briefing {{arrow}}</a>
+      </div>
+      <div class="ad-hero__slide">
+        <p class="ad-hero__kicker">Perspective <span>October 2026</span></p>
+        <p class="ad-hero__title">Where transformations fail</p>
+        <p class="ad-hero__dek">Strategy, systems, security and service are bought separately and fail together.</p>
+        <a class="ad-hero__go" href="{{root}}insights/the-joins/">Read more {{arrow}}</a>
+      </div>
+      <div class="ad-hero__slide">
+        <p class="ad-hero__kicker">Podcast <span>Season one, coming soon</span></p>
+        <p class="ad-hero__title">The Aldier Podcast</p>
+        <p class="ad-hero__dek">Conversations with the people who build institutions, and the decisions that tested them.</p>
+        <a class="ad-hero__go" href="{{root}}podcast/">About the podcast {{arrow}}</a>
+      </div>
     </div>
-    <ol class="ad-chapters" aria-label="Our five practices">
-      <li><button type="button" aria-current="true"><span class="ad-bar"><i></i></span><b>Strategy</b><span>and Transformation</span></button></li>
-      <li><button type="button" aria-current="false"><span class="ad-bar"><i></i></span><b>Technology</b><span>and Data</span></button></li>
-      <li><button type="button" aria-current="false"><span class="ad-bar"><i></i></span><b>Cybersecurity</b><span>and Digital Risk</span></button></li>
-      <li><button type="button" aria-current="false"><span class="ad-bar"><i></i></span><b>Design</b><span>and Experience</span></button></li>
-      <li><button type="button" aria-current="false"><span class="ad-bar"><i></i></span><b>Communications</b><span>and Public Affairs</span></button></li>
+    <ol class="ad-chapters" aria-label="Featured stories">
+      <li><button type="button" aria-current="true"><span class="ad-bar"><i></i></span><b>Aldier</b><span>Who we are</span></button></li>
+      <li><button type="button" aria-current="false"><span class="ad-bar"><i></i></span><b>GENIVY</b><span>Case study</span></button></li>
+      <li><button type="button" aria-current="false"><span class="ad-bar"><i></i></span><b>Cyber resilience</b><span>Board briefing</span></button></li>
+      <li><button type="button" aria-current="false"><span class="ad-bar"><i></i></span><b>Transformation</b><span>Perspective</span></button></li>
+      <li><button type="button" aria-current="false"><span class="ad-bar"><i></i></span><b>Podcast</b><span>Coming soon</span></button></li>
     </ol>
   </div>
   <button class="ad-film-toggle" type="button" aria-label="Pause the films"></button>
 </section>
 
-<section class="ad-sec ad-on-light" aria-labelledby="featured-title">
-  <div class="ad-wrap">
-    <div class="ad-head">
-      <div><p class="ad-eyebrow">Insights</p><h2 id="featured-title" class="ad-h2">Featured insights</h2></div>
-      <p>Perspectives and research from across our practices on the decisions in front of institutions.</p>
-    </div>
-    <div class="ad-mosaic">
-      <a class="ad-tile ad-tile--shade ad-span-7 ad-row-2 ad-wide-m" href="{{root}}review/" data-reveal>
-        <div class="ad-tile__media"><img src="{{root}}assets/photos/render-dark-1600.webp" srcset="{{root}}assets/photos/render-dark-800.webp 800w, {{root}}assets/photos/render-dark-1600.webp 1600w" sizes="(max-width: 960px) 100vw, 58vw" alt="" loading="lazy"></div>
-        <span class="ad-tag ad-tag--soon">Coming soon</span>
-        <p class="ad-tile__type">The Aldier Review</p>
-        <h3>A journal of institutional performance, grounded in evidence and practice.</h3>
-        <span class="ad-tile__go">About the Review <svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
-      </a>
-      <a class="ad-tile ad-tile--shade ad-span-5" href="{{root}}insights/the-joins/" data-reveal>
-        <div class="ad-tile__media"><img src="{{root}}assets/photos/team-laptops-800.webp" alt="" loading="lazy"></div>
-        <p class="ad-tile__type">Perspective</p>
-        <h3>Where transformations fail: the gaps between disciplines</h3>
-      </a>
-      <a class="ad-tile ad-tile--shade ad-span-5" href="{{root}}insights/before-the-breach/" data-reveal>
-        <div class="ad-tile__media"><img src="{{root}}assets/photos/server-engineer-800.webp" alt="" loading="lazy"></div>
-        <p class="ad-tile__type">Board briefing</p>
-        <h3>Before the breach: seven questions a board can ask this quarter</h3>
-      </a>
-      <a class="ad-tile ad-tile--light ad-span-4" href="{{root}}insights/the-handover/" data-reveal>
-        <p class="ad-tile__type" style="color:var(--blue)">Perspective</p>
-        <h3>The handover: building institutions that outlast their founders</h3>
-        <span class="ad-tile__go" style="color:var(--blue)">Read <svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
-      </a>
-      <a class="ad-tile ad-tile--shade ad-span-4" href="{{root}}work/genivy/" data-reveal>
-        <div class="ad-tile__media"><img src="{{root}}assets/photos/audience-800.webp" alt="" loading="lazy"></div>
-        <p class="ad-tile__type">Case study</p>
-        <h3>GENIVY: founding an international guild of students</h3>
-      </a>
-      <div class="ad-subpanel ad-span-4 ad-wide-m" id="briefing" data-reveal>
-        <div><p class="ad-tile__type" style="color:var(--sky)">The Aldier Briefing</p><h3>Sharper decisions, once a month.</h3><p>The Aldier Briefing brings our latest perspectives and research to leaders of institutions.</p></div>
-        <form class="ad-sub" action="{{root}}api/enquiry" method="post" data-enquiry>
-          <input type="hidden" name="form" value="briefing">
-          <label class="ad-vh" for="brief-email">Email address</label>
-          <input id="brief-email" name="email" type="email" autocomplete="email" placeholder="Your email address" required>
-          <input class="ad-hp" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button class="ad-btn ad-btn--light" type="submit">Subscribe</button>
-          <p class="ad-sub__note" role="status">See the <a href="{{root}}privacy/">privacy notice</a>.</p>
-        </form>
+<section class="ad-sec ad-sec--tight ad-on-light" aria-labelledby="spot-title">
+  <div class="ad-wrap" data-tabs>
+    <div class="ad-spotbar">
+      <p class="ad-eyebrow" id="spot-title">Aldier spotlight</p>
+      <div class="ad-spotbar__tabs" role="tablist" aria-labelledby="spot-title">
+        <button role="tab" id="sp-t1" aria-controls="sp-p1" aria-selected="true">Applied AI</button>
+        <button role="tab" id="sp-t2" aria-controls="sp-p2" aria-selected="false" tabindex="-1">Cyber resilience</button>
+        <button role="tab" id="sp-t3" aria-controls="sp-p3" aria-selected="false" tabindex="-1">Institution building</button>
       </div>
     </div>
+    <div class="ad-banner" role="tabpanel" id="sp-p1" aria-labelledby="sp-t1">
+      <img src="{{root}}assets/photos/render-waves-1600.webp" srcset="{{root}}assets/photos/render-waves-800.webp 800w, {{root}}assets/photos/render-waves-1600.webp 1600w" sizes="100vw" alt="" loading="lazy">
+      <h2 class="ad-banner__title">Applied AI, governed: from pilot to production with the controls regulators expect</h2>
+      <div class="ad-banner__side"><p>Most AI pilots never reach the people they were meant to serve. The ones that do were designed with risk, data and the workforce in the room.</p><a class="ad-btn ad-btn--light" href="{{root}}practices/technology/">Learn more {{arrow}}</a></div>
+    </div>
+    <div class="ad-banner" role="tabpanel" id="sp-p2" aria-labelledby="sp-t2" hidden>
+      <img src="{{root}}assets/photos/glass-dark-1600.webp" srcset="{{root}}assets/photos/glass-dark-800.webp 800w, {{root}}assets/photos/glass-dark-1600.webp 1600w" sizes="100vw" alt="" loading="lazy">
+      <h2 class="ad-banner__title">Rehearse the first hours of a breach before they happen</h2>
+      <div class="ad-banner__side"><p>Boards that have practised the decisions of an incident make them faster, and make fewer of them in public.</p><a class="ad-btn ad-btn--light" href="{{root}}practices/cybersecurity/">Learn more {{arrow}}</a></div>
+    </div>
+    <div class="ad-banner" role="tabpanel" id="sp-p3" aria-labelledby="sp-t3" hidden>
+      <img src="{{root}}assets/photos/render-fold-1600.webp" srcset="{{root}}assets/photos/render-fold-800.webp 800w, {{root}}assets/photos/render-fold-1600.webp 1600w" sizes="100vw" alt="" loading="lazy">
+      <h2 class="ad-banner__title">Build institutions that outlast their founders</h2>
+      <div class="ad-banner__side"><p>Governance, succession and a handover written in from the start: what separates an organisation from a personality.</p><a class="ad-btn ad-btn--light" href="{{root}}insights/the-handover/">Learn more {{arrow}}</a></div>
+    </div>
   </div>
 </section>
 
-<section class="ad-sec ad-statement ad-mist" aria-label="How we help clients">
+<section class="ad-sec ad-on-light ad-pt-0" aria-labelledby="impact-title">
   <div class="ad-wrap">
-    <p class="ad-eyebrow">How we help clients</p>
-    <p class="ad-lit" data-light>We help clients set direction, build the systems and services that deliver it, protect what they have built, and earn the confidence of the people they serve. <em>One firm, accountable from the first decision to the last mile of delivery.</em></p>
+    <div class="ad-head">
+      <div><p class="ad-eyebrow">Client impact</p><h2 id="impact-title" class="ad-h2">Beyond advice. Built to last.</h2></div>
+      <p>We stay from the first decision to the handover, and we are measured by what still stands after we leave.</p>
+    </div>
+    <article class="ad-story" data-reveal>
+      <div class="ad-story__media"><img src="{{root}}assets/photos/auditorium-1600.webp" srcset="{{root}}assets/photos/auditorium-800.webp 800w, {{root}}assets/photos/auditorium-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 55vw" alt="Rows of seats in a darkened auditorium" loading="lazy"></div>
+      <div class="ad-story__body">
+        <p class="ad-tile__type">Featured client story</p>
+        <h3 class="ad-h3">GENIVY: an institution designed end to end, from constitution to campus</h3>
+        <p class="ad-story__label">The work</p>
+        <dl class="ad-stats">
+          <div><dt>5</dt><dd>practices on one programme, under one lead partner</dd></div>
+          <div><dt>5</dt><dd>protections in its constitution that no vote can change</dd></div>
+          <div><dt>17</dt><dd>sectors with standards set by practitioners</dd></div>
+        </dl>
+        <div class="ad-actions"><a class="ad-btn" href="{{root}}work/genivy/">Read the story {{arrow}}</a><a class="ad-link" href="{{root}}work/">See all our work {{arrow}}</a></div>
+      </div>
+    </article>
   </div>
 </section>
 
-<section class="ad-sec ad-on-light" id="where-to-start" aria-labelledby="finder-title">
+<section class="ad-sec ad-mist" id="where-to-start" aria-labelledby="finder-title">
   <div class="ad-wrap ad-finder" data-finder>
     <div class="ad-finder__media" data-reveal><img src="{{root}}assets/photos/meeting-table-1600.webp" srcset="{{root}}assets/photos/meeting-table-800.webp 800w, {{root}}assets/photos/meeting-table-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 45vw" alt="Senior colleagues in discussion around a meeting table" loading="lazy"></div>
     <div>
-      <p class="ad-eyebrow">Where to start</p>
       <h2 id="finder-title" class="ad-h2">What can we help you achieve?</h2>
-      <p class="ad-lede ad-mt-s">Answer two questions to see where we would begin.</p>
+      <p class="ad-lede ad-mt-s">Answer two questions and put our thinking to work on your challenge.</p>
       <div class="ad-finder__step" data-step="1">
-        <p class="ad-finder__q">1. What is your sector? <small>Question 1 of 2</small></p>
+        <p class="ad-finder__q">1. What kind of organisation are you? <small>Question 1 of 2</small></p>
         <ul class="ad-chips">
           <li><button class="ad-chip" type="button" aria-pressed="false" data-value="company">A company</button></li>
           <li><button class="ad-chip" type="button" aria-pressed="false" data-value="bank">A financial institution</button></li>
@@ -123,141 +143,131 @@ brief: no
         <h3></h3>
         <p data-text></p>
         <ul class="ad-finder__practices"></ul>
-        <a class="ad-btn ad-btn--light" href="{{root}}contact/" data-base="{{root}}contact/">Discuss this with us <svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="ad-btn ad-btn--light" href="{{root}}contact/" data-base="{{root}}contact/">Discuss this with us {{arrow}}</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="ad-sec ad-dark" aria-labelledby="practices-title">
+<section class="ad-sec ad-on-light" aria-labelledby="latest-title">
   <div class="ad-wrap">
-    <div class="ad-head">
-      <div><p class="ad-eyebrow">Capabilities</p><h2 id="practices-title" class="ad-h2">Our practices</h2></div>
-      <p>Each practice is led by specialists in its discipline. Clients engage one, or bring several together on a single engagement.</p>
+    <div class="ad-rulehead"><h2 id="latest-title" class="ad-h2">Our latest insights</h2></div>
+    <ul class="ad-feed">
+      <li><a class="ad-feed__a" href="{{root}}insights/the-joins/"><div class="ad-feed__media"><img src="{{root}}assets/photos/team-laptops-800.webp" alt="" loading="lazy"></div><p class="ad-feed__cat">Strategy and Transformation</p><h3 class="ad-feed__title">Where transformations fail: the gaps between disciplines</h3><p class="ad-feed__dek">The hard problems sit between the contracts. Nobody is paid to notice them, so nobody does.</p><p class="ad-feed__meta">Perspective <span>6 min read</span></p></a></li>
+      <li><a class="ad-feed__a" href="{{root}}insights/before-the-breach/"><div class="ad-feed__media"><img src="{{root}}assets/photos/server-engineer-800.webp" alt="" loading="lazy"></div><p class="ad-feed__cat">Cybersecurity and Digital Risk</p><h3 class="ad-feed__title">Before the breach: seven questions a board can ask this quarter</h3><p class="ad-feed__dek">The decisions of the first hours are made long before the attack. Directors can test them now.</p><p class="ad-feed__meta">Board briefing <span>7 min read</span></p></a></li>
+      <li><a class="ad-feed__a" href="{{root}}insights/the-handover/"><div class="ad-feed__media"><img src="{{root}}assets/photos/careers-team-800.webp" alt="" loading="lazy"></div><p class="ad-feed__cat">Strategy and Transformation</p><h3 class="ad-feed__title">The handover: building institutions that outlast their founders</h3><p class="ad-feed__dek">An institution is tested on the day its founders leave. The best ones plan for that day first.</p><p class="ad-feed__meta">Perspective <span>6 min read</span></p></a></li>
+    </ul>
+    <p class="ad-center ad-mt"><a class="ad-btn ad-btn--ghost ad-btn--dark" href="{{root}}insights/">See all insights</a></p>
+  </div>
+</section>
+
+<section class="ad-sec ad-pod" aria-labelledby="pod-title">
+  <div class="ad-wrap" data-tabs>
+    <div class="ad-pod__head">
+      <div><h2 id="pod-title" class="ad-h1">The Aldier Podcast</h2></div>
+      <div><p>Conversations with the ministers, chief executives, founders and builders who carry institutions through the decisions that test them. Season one is in production.</p><a class="ad-btn ad-btn--outline-light" href="{{root}}podcast/">Listen here {{arrow}}</a></div>
     </div>
-    <div class="ad-acc">
-      <a class="ad-acc__item is-open" href="{{root}}practices/strategy/">
-        <img src="{{root}}assets/photos/pr-strategy-1600.webp" srcset="{{root}}assets/photos/pr-strategy-800.webp 800w, {{root}}assets/photos/pr-strategy-1600.webp 1600w" sizes="(max-width: 960px) 100vw, 60vw" alt="" loading="lazy">
-        <div class="ad-acc__body"><span class="ad-acc__no">01</span><span class="ad-acc__name">Strategy and Transformation</span><div class="ad-acc__more"><div><p>Corporate and public strategy, operating models, mergers and partnerships, and the transformation office that carries a plan through to results.</p><span class="ad-link">Explore the practice <svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></div></div></div>
-      </a>
-      <a class="ad-acc__item" href="{{root}}practices/technology/">
-        <img src="{{root}}assets/photos/pr-technology-1600.webp" srcset="{{root}}assets/photos/pr-technology-800.webp 800w, {{root}}assets/photos/pr-technology-1600.webp 1600w" sizes="(max-width: 960px) 100vw, 60vw" alt="" loading="lazy">
-        <div class="ad-acc__body"><span class="ad-acc__no">02</span><span class="ad-acc__name">Technology and Data</span><div class="ad-acc__more"><div><p>Technology strategy and architecture, independent procurement advice, delivery assurance, data and applied AI.</p><span class="ad-link">Explore the practice <svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></div></div></div>
-      </a>
-      <a class="ad-acc__item" href="{{root}}practices/cybersecurity/">
-        <img src="{{root}}assets/photos/pr-cyber-1600.webp" srcset="{{root}}assets/photos/pr-cyber-800.webp 800w, {{root}}assets/photos/pr-cyber-1600.webp 1600w" sizes="(max-width: 960px) 100vw, 60vw" alt="" loading="lazy">
-        <div class="ad-acc__body"><span class="ad-acc__no">03</span><span class="ad-acc__name">Cybersecurity and Digital Risk</span><div class="ad-acc__more"><div><p>Cyber governance, readiness assessment, data protection, incident simulation and resilience planning.</p><span class="ad-link">Explore the practice <svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></div></div></div>
-      </a>
-      <a class="ad-acc__item" href="{{root}}practices/design/">
-        <img src="{{root}}assets/photos/pr-design-1600.webp" srcset="{{root}}assets/photos/pr-design-800.webp 800w, {{root}}assets/photos/pr-design-1600.webp 1600w" sizes="(max-width: 960px) 100vw, 60vw" alt="" loading="lazy">
-        <div class="ad-acc__body"><span class="ad-acc__no">04</span><span class="ad-acc__name">Design and Experience</span><div class="ad-acc__more"><div><p>Brand and identity, service design, digital products, film and spatial design, delivered through Aldier Studio.</p><span class="ad-link">Explore the practice <svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></div></div></div>
-      </a>
-      <a class="ad-acc__item" href="{{root}}practices/communications/">
-        <img src="{{root}}assets/photos/microphones-1600.webp" srcset="{{root}}assets/photos/microphones-800.webp 800w, {{root}}assets/photos/microphones-1600.webp 1600w" sizes="(max-width: 960px) 100vw, 60vw" alt="" loading="lazy">
-        <div class="ad-acc__body"><span class="ad-acc__no">05</span><span class="ad-acc__name">Communications and Public Affairs</span><div class="ad-acc__more"><div><p>Corporate reputation, crisis management, government relations, and investor and internal communications.</p><span class="ad-link">Explore the practice <svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></div></div></div>
-      </a>
+    <div class="ad-pod__panel" role="tabpanel" id="ep-p1" aria-labelledby="ep-t1">
+      <div class="ad-pod__text"><p class="ad-pod__date">Episode 1 · Coming soon</p><h3>The decision nobody wanted to make</h3><p>What leaders learn when a transformation stalls, and the moment they chose to restart it.</p></div>
+      <div class="ad-pod__media"><img src="{{root}}assets/photos/microphones-1600.webp" srcset="{{root}}assets/photos/microphones-800.webp 800w, {{root}}assets/photos/microphones-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw" alt="" loading="lazy"><span class="ad-pod__play" aria-hidden="true"><svg width="22" height="26" viewBox="0 0 22 26"><path d="M0 0l22 13L0 26z" fill="currentColor"/></svg></span><span class="ad-pod__soon">Trailer coming soon</span></div>
+    </div>
+    <div class="ad-pod__panel" role="tabpanel" id="ep-p2" aria-labelledby="ep-t2" hidden>
+      <div class="ad-pod__text"><p class="ad-pod__date">Episode 2 · Coming soon</p><h3>Money, trust and the regulator</h3><p>How banks and payment companies grow fast without losing the confidence of the people who supervise them.</p></div>
+      <div class="ad-pod__media"><img src="{{root}}assets/photos/data-hall-1600.webp" srcset="{{root}}assets/photos/data-hall-800.webp 800w, {{root}}assets/photos/data-hall-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw" alt="" loading="lazy"><span class="ad-pod__play" aria-hidden="true"><svg width="22" height="26" viewBox="0 0 22 26"><path d="M0 0l22 13L0 26z" fill="currentColor"/></svg></span><span class="ad-pod__soon">Trailer coming soon</span></div>
+    </div>
+    <div class="ad-pod__panel" role="tabpanel" id="ep-p3" aria-labelledby="ep-t3" hidden>
+      <div class="ad-pod__text"><p class="ad-pod__date">Episode 3 · Coming soon</p><h3>Who owns the campus economy?</h3><p>Students already trade, deliver and serve on every campus. What changes when they own the enterprise.</p></div>
+      <div class="ad-pod__media"><img src="{{root}}assets/photos/civic-hall-1600.webp" srcset="{{root}}assets/photos/civic-hall-800.webp 800w, {{root}}assets/photos/civic-hall-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw" alt="" loading="lazy"><span class="ad-pod__play" aria-hidden="true"><svg width="22" height="26" viewBox="0 0 22 26"><path d="M0 0l22 13L0 26z" fill="currentColor"/></svg></span><span class="ad-pod__soon">Trailer coming soon</span></div>
+    </div>
+    <div class="ad-pod__panel" role="tabpanel" id="ep-p4" aria-labelledby="ep-t4" hidden>
+      <div class="ad-pod__text"><p class="ad-pod__date">Episode 4 · Coming soon</p><h3>Africa's next institutions</h3><p>The universities, regulators and companies being built now, and what they will need to last.</p></div>
+      <div class="ad-pod__media"><img src="{{root}}assets/photos/lekki-bridge-1600.webp" srcset="{{root}}assets/photos/lekki-bridge-800.webp 800w, {{root}}assets/photos/lekki-bridge-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw" alt="" loading="lazy"><span class="ad-pod__play" aria-hidden="true"><svg width="22" height="26" viewBox="0 0 22 26"><path d="M0 0l22 13L0 26z" fill="currentColor"/></svg></span><span class="ad-pod__soon">Trailer coming soon</span></div>
+    </div>
+    <div class="ad-pod__tabs" role="tablist" aria-label="Season one episodes">
+      <button role="tab" id="ep-t1" aria-controls="ep-p1" aria-selected="true">The decision nobody wanted to make</button>
+      <button role="tab" id="ep-t2" aria-controls="ep-p2" aria-selected="false" tabindex="-1">Money, trust and the regulator</button>
+      <button role="tab" id="ep-t3" aria-controls="ep-p3" aria-selected="false" tabindex="-1">Who owns the campus economy?</button>
+      <button role="tab" id="ep-t4" aria-controls="ep-p4" aria-selected="false" tabindex="-1">Africa's next institutions</button>
     </div>
   </div>
 </section>
 
-<section class="ad-sec ad-on-light" aria-labelledby="programmes-title">
+<section class="ad-sec ad-dark" aria-labelledby="trio-title">
   <div class="ad-wrap">
-    <div class="ad-head">
-      <div><p class="ad-eyebrow">Research and programmes</p><h2 id="programmes-title" class="ad-h2">Beyond client work</h2></div>
-      <p>Aldier invests in research, publishing and leadership programmes for boards, public officials and the wider public.</p>
-    </div>
-    <div class="ad-bento">
-      <a class="ad-tile ad-tile--shade ad-bento__a" href="{{root}}institute/" data-reveal>
-        <div class="ad-tile__media"><img src="{{root}}assets/photos/glass-blue-1600.webp" srcset="{{root}}assets/photos/glass-blue-800.webp 800w, {{root}}assets/photos/glass-blue-1600.webp 1600w" sizes="(max-width: 960px) 100vw, 50vw" alt="" loading="lazy"></div>
-        <p class="ad-tile__type">Research</p>
-        <h3>The Aldier Institute</h3>
-        <p>Independent research on how institutions perform, and how they earn lasting public trust.</p>
-      </a>
-      <a class="ad-tile ad-tile--shade ad-bento__b" href="{{root}}studio/" data-reveal>
-        <div class="ad-tile__media"><img src="{{root}}assets/photos/tablet-studio-1600.webp" srcset="{{root}}assets/photos/tablet-studio-800.webp 800w, {{root}}assets/photos/tablet-studio-1600.webp 1600w" sizes="(max-width: 960px) 100vw, 50vw" alt="" loading="lazy" style="object-position:50% 35%"></div>
-        <p class="ad-tile__type">Design and build</p>
-        <h3>Aldier Studio</h3>
-      </a>
-      <a class="ad-tile ad-tile--shade" href="{{root}}board-programme/" data-reveal>
-        <div class="ad-tile__media"><img src="{{root}}assets/photos/boardroom-800.webp" alt="" loading="lazy"></div>
-        <p class="ad-tile__type">For directors</p>
-        <h3>The Board Programme</h3>
-      </a>
-      <a class="ad-tile ad-tile--shade" href="{{root}}conversations/" data-reveal>
-        <div class="ad-tile__media"><video muted loop playsinline preload="none" poster="{{root}}assets/film/meeting.webp" data-ambient aria-hidden="true"><source data-src="{{root}}assets/film/meeting.webm" type="video/webm"><source data-src="{{root}}assets/film/meeting.mp4" type="video/mp4"></video></div>
-        <p class="ad-tile__type">Film series</p>
-        <h3>Aldier Conversations</h3>
-      </a>
+    <h2 id="trio-title" class="ad-h2 ad-center ad-trio__title">Turn ambition into results that last.</h2>
+    <ul class="ad-trio">
+      <li><a href="{{root}}industries/"><div class="ad-trio__media"><img src="{{root}}assets/photos/render-lines-800.webp" alt="" loading="lazy"></div><h3>Industry expertise {{chev}}</h3><p>Fifteen industries, with dedicated teams for the public sector, education and financial services.</p></a></li>
+      <li><a href="{{root}}practices/"><div class="ad-trio__media"><img src="{{root}}assets/photos/cubes-blue-800.webp" alt="" loading="lazy"></div><h3>Capabilities {{chev}}</h3><p>Five practices, engaged one at a time or together under a single partner.</p></a></li>
+      <li><a href="{{root}}studio/"><div class="ad-trio__media"><img src="{{root}}assets/photos/white-curves-800.webp" alt="" loading="lazy"></div><h3>Aldier Studio {{chev}}</h3><p>Identities, services, products and films, designed and built in house.</p></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="ad-news" aria-labelledby="news-title">
+  <div class="ad-news__body">
+    <p class="ad-eyebrow ad-eyebrow--light">Featured newsletter</p>
+    <h2 id="news-title" class="ad-h2">Insights for the decisions ahead</h2>
+    <p>Sharper decisions start with The Aldier Briefing, our best thinking for leaders of institutions, once a month.</p>
+    <form class="ad-sub ad-sub--bar" action="{{root}}api/enquiry" method="post" data-enquiry>
+      <input type="hidden" name="form" value="briefing">
+      <label class="ad-vh" for="home-email">Email address</label>
+      <input id="home-email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
+      <input class="ad-hp" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="ad-btn ad-btn--light" type="submit">Subscribe</button>
+      <p class="ad-sub__note" role="status">See the <a href="{{root}}privacy/">privacy notice</a>.</p>
+    </form>
+  </div>
+  <div class="ad-news__media"><img src="{{root}}assets/photos/woman-blue-1600.webp" srcset="{{root}}assets/photos/woman-blue-800.webp 800w, {{root}}assets/photos/woman-blue-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw" alt="" loading="lazy" style="object-position:50% 25%"></div>
+</section>
+
+<section class="ad-sec ad-on-light" aria-labelledby="about-title">
+  <div class="ad-wrap ad-duo">
+    <a class="ad-duo__main" href="{{root}}about/" data-reveal>
+      <img src="{{root}}assets/photos/team-room-1600.webp" srcset="{{root}}assets/photos/team-room-800.webp 800w, {{root}}assets/photos/team-room-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy">
+      <div><p class="ad-duo__kicker">About Aldier</p><h2 id="about-title" class="ad-duo__title">One firm, from the first decision to the last mile</h2><span class="ad-btn ad-btn--light">See how we work {{arrow}}</span></div>
+    </a>
+    <div class="ad-duo__side">
+      <a class="ad-duo__card ad-duo__card--ice" href="{{root}}board-programme/" data-reveal><p class="ad-duo__kicker">For directors</p><h3>The Board Programme</h3><span class="ad-btn">Explore {{arrow}}</span></a>
+      <a class="ad-duo__card ad-duo__card--film" href="{{root}}conversations/" data-reveal><video muted loop playsinline preload="none" poster="{{root}}assets/film/meeting.webp" data-ambient aria-hidden="true"><source data-src="{{root}}assets/film/meeting.webm" type="video/webm"><source data-src="{{root}}assets/film/meeting.mp4" type="video/mp4"></video><p class="ad-duo__kicker">Now showing</p><h3>Aldier Conversations</h3><span class="ad-btn ad-btn--light">Watch now {{arrow}}</span></a>
     </div>
   </div>
 </section>
 
-<section class="ad-drift ad-night" data-drift aria-labelledby="drift-title">
-  <div class="ad-wrap">
-    <h2 id="drift-title" class="ad-drift__title">How we work</h2>
-    <div class="ad-drift__cards">
-      <div class="ad-drift__card"><b>One</b><div><h3>A single accountable partner</h3><p>One named partner leads each engagement from the first meeting to the handover.</p></div></div>
-      <div class="ad-drift__card"><b>Two</b><div><h3>Integrated teams</h3><p>Specialists from every practice the work requires, named at the outset.</p></div></div>
-      <div class="ad-drift__card"><b>Three</b><div><h3>Independent quality review</h3><p>Every deliverable is reviewed by a colleague outside the engagement team.</p></div></div>
-      <div class="ad-drift__card"><b>Four</b><div><h3>Independent assurance</h3><p>Systems Aldier builds are tested and certified by independent parties.</p></div></div>
-      <div class="ad-drift__card"><b>Five</b><div><h3>Objective advice</h3><p>Our recommendations stand on evidence, and every figure we present is traceable to its source.</p></div></div>
+<section class="ad-sec ad-sec--tight ad-on-light ad-pt-0" aria-labelledby="loc-title">
+  <div class="ad-wrap ad-loc">
+    <div class="ad-loc__media" data-reveal><img src="{{root}}assets/photos/lekki-bridge-wide-1600.webp" srcset="{{root}}assets/photos/lekki-bridge-wide-800.webp 800w, {{root}}assets/photos/lekki-bridge-wide-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 55vw" alt="A cable-stayed bridge over a lagoon in Lagos at dusk" loading="lazy" style="object-position:50% 85%"></div>
+    <div>
+      <p class="ad-eyebrow">Where we work</p>
+      <h2 id="loc-title" class="ad-h2">Aldier in Africa</h2>
+      <p class="ad-lede ad-mt-s">Built in Africa, for institutions across the continent. Read our latest thinking on the region and speak with our team.</p>
+      <div class="ad-actions"><a class="ad-btn" href="{{root}}contact/">Learn more {{arrow}}</a></div>
     </div>
   </div>
 </section>
 
-<section class="ad-sec ad-on-light" aria-labelledby="industries-title">
+<section class="ad-careers" aria-labelledby="careers-title">
+  <div class="ad-careers__body">
+    <p class="ad-eyebrow">Aldier careers</p>
+    <h2 id="careers-title" class="ad-h2">Go further than you planned</h2>
+    <p class="ad-lede ad-mt-s">Work on the decisions that reach citizens, students and customers, beside specialists from five disciplines.</p>
+    <div class="ad-actions"><a class="ad-btn ad-btn--ghost ad-btn--dark" href="{{root}}careers/">Explore Aldier careers {{arrow}}</a><a class="ad-btn" href="{{root}}careers/#register">Register your interest {{arrow}}</a></div>
+  </div>
+  <div class="ad-careers__art" aria-hidden="true"><img class="ad-careers__bg" src="{{root}}assets/photos/render-waves-800.webp" alt="" loading="lazy"><div class="ad-careers__frame"><img src="{{root}}assets/photos/careers-pair-800.webp" alt="" loading="lazy"></div></div>
+</section>
+
+<section class="ad-sec ad-impact" aria-labelledby="soc-title">
   <div class="ad-wrap">
-    <div class="ad-head">
-      <div><p class="ad-eyebrow">Industries</p><h2 id="industries-title" class="ad-h2">Industries we serve</h2></div>
-      <p>We serve organisations across fifteen industries, bringing the full range of our practices to the issues that define each one.</p>
-    </div>
-    <ul class="ad-pills"><li><a href="{{root}}industries/agriculture/">Agriculture and Food Systems</a></li><li><a href="{{root}}industries/consumer/">Consumer and Retail</a></li><li><a href="{{root}}industries/creative/">Creative and Cultural Industries</a></li><li><a href="{{root}}industries/development/">Development and Social Impact</a></li><li><a href="{{root}}industries/education/">Education</a></li><li><a href="{{root}}industries/energy/">Energy, Power and Natural Resources</a></li><li><a href="{{root}}industries/financial-services/">Financial Services</a></li><li><a href="{{root}}industries/healthcare/">Healthcare and Life Sciences</a></li><li><a href="{{root}}industries/hospitality/">Hospitality and Travel</a></li><li><a href="{{root}}industries/manufacturing/">Manufacturing and Industrials</a></li><li><a href="{{root}}industries/private-capital/">Private Capital</a></li><li><a href="{{root}}industries/public-sector/">Public Sector and Government</a></li><li><a href="{{root}}industries/real-estate/">Real Estate and Infrastructure</a></li><li><a href="{{root}}industries/tmt/">Telecoms, Media and Technology</a></li><li><a href="{{root}}industries/transport/">Transport and Logistics</a></li></ul>
-    <div class="ad-depth"><a class="ad-tile ad-tile--shade" href="{{root}}industries/financial-services/" data-reveal><div class="ad-tile__media"><img src="{{root}}assets/photos/bank-portico-1600.webp" srcset="{{root}}assets/photos/bank-portico-800.webp 800w, {{root}}assets/photos/bank-portico-1600.webp 1600w, {{root}}assets/photos/bank-portico-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 33vw" alt="" loading="lazy"></div><p class="ad-tile__type">Industry</p><h3>Financial Services</h3><p>Growth with the controls that customers and regulators depend on.</p></a><a class="ad-tile ad-tile--shade" href="{{root}}industries/energy/" data-reveal><div class="ad-tile__media"><img src="{{root}}assets/photos/solar-1600.webp" srcset="{{root}}assets/photos/solar-800.webp 800w, {{root}}assets/photos/solar-1600.webp 1600w, {{root}}assets/photos/solar-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 33vw" alt="" loading="lazy"></div><p class="ad-tile__type">Industry</p><h3>Energy, Power and Natural Resources</h3><p>Reliable, affordable energy, and resources developed responsibly.</p></a><a class="ad-tile ad-tile--shade" href="{{root}}industries/tmt/" data-reveal><div class="ad-tile__media"><img src="{{root}}assets/photos/ind-tmt-1600.webp" srcset="{{root}}assets/photos/ind-tmt-800.webp 800w, {{root}}assets/photos/ind-tmt-1600.webp 1600w, {{root}}assets/photos/ind-tmt-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 33vw" alt="" loading="lazy"></div><p class="ad-tile__type">Industry</p><h3>Telecoms, Media and Technology</h3><p>Networks, platforms and products that win customers and keep their trust.</p></a></div>
+    <p class="ad-center ad-impact__kicker">Societal impact</p>
+    <h2 id="soc-title" class="ad-h2 ad-center">Sharing what we know, so more institutions succeed</h2>
+    <ul class="ad-trio ad-trio--light">
+      <li><a href="{{root}}about/social-impact/"><div class="ad-trio__media"><img src="{{root}}assets/photos/classroom-800.webp" alt="" loading="lazy"></div><h3>Social impact {{chev}}</h3><p>Our capabilities, applied to the institutions that widen opportunity, beginning with GENIVY.</p></a></li>
+      <li><a href="{{root}}institute/"><div class="ad-trio__media"><img src="{{root}}assets/photos/glass-blue-800.webp" alt="" loading="lazy"></div><h3>The Aldier Institute {{chev}}</h3><p>Independent research on how institutions perform and earn lasting trust.</p></a></li>
+      <li><a href="{{root}}review/"><div class="ad-trio__media"><img src="{{root}}assets/photos/render-dark-800.webp" alt="" loading="lazy"></div><h3>The Aldier Review {{chev}}</h3><p>A journal of institutional performance, grounded in evidence. First issue coming soon.</p></a></li>
+    </ul>
   </div>
 </section>
 
-<section class="ad-sec ad-sec--tight ad-on-light" aria-labelledby="spot-title">
-  <div class="ad-wrap">
-    <div class="ad-spot" data-reveal>
-      <div class="ad-spot__media"><img src="{{root}}assets/photos/lecture-1600.webp" srcset="{{root}}assets/photos/lecture-800.webp 800w, {{root}}assets/photos/lecture-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 55vw" alt="Students listening in a lecture hall" loading="lazy"></div>
-      <div class="ad-spot__body">
-        <p class="ad-eyebrow">Our impact in action</p>
-        <h2 id="spot-title">GENIVY</h2>
-        <p>GENIVY is the international guild of students that Aldier helped found. Owned by its members, it organises the work already present on university campuses, pays students to run it and certifies what they achieve. Aldier designed its economic model, constitution, identity and digital platform, and provides strategy, design and technology as its Founding Partner.</p>
-        <dl class="ad-facts ad-mt" style="border-color:var(--line-dark)"><div><dt style="color:rgba(255,255,255,.6)">Practices</dt><dd>All five</dd></div><div><dt style="color:rgba(255,255,255,.6)">Role</dt><dd>Founding Partner</dd></div></dl>
-        <div class="ad-actions"><a class="ad-link" href="{{root}}work/genivy/">Read the case study {{arrow}}</a><a class="ad-link" href="https://genivy.pages.dev/" rel="noopener">Visit GENIVY {{arrow}}</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="ad-sec ad-royal" aria-labelledby="careers-title">
-  <div class="ad-wrap ad-split">
-    <div data-reveal>
-      <p class="ad-eyebrow">Careers</p>
-      <h2 id="careers-title" class="ad-h2">Build your career at Aldier</h2>
-      <p class="ad-lede ad-mt-s">Work on the decisions that reach citizens, students and customers, alongside specialists from five disciplines. The standard is high, and so is the pace at which you will learn.</p>
-      <div class="ad-actions"><a class="ad-btn ad-btn--light" href="{{root}}careers/">Explore careers <svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
-    </div>
-    <div class="ad-collage" aria-hidden="true" data-reveal>
-      <div class="ad-shape-half-l ad-fill-sky"></div>
-      <div class="ad-shape-circle"><img src="{{root}}assets/photos/portrait-blue-800.webp" alt="" loading="lazy" style="object-position:50% 25%"></div>
-      <div class="ad-shape-half-t"><img src="{{root}}assets/photos/woman-blue-800.webp" alt="" loading="lazy" style="object-position:50% 20%"></div>
-      <div class="ad-shape-quarter ad-fill-navy"></div>
-      <div class="ad-shape-half-r"><img src="{{root}}assets/photos/portrait-suit-800.webp" alt="" loading="lazy" style="object-position:50% 25%"></div>
-      <div class="ad-shape-circle ad-fill-gold" style="transform:scale(.42)"></div>
-      <div class="ad-shape-leaf"><img src="{{root}}assets/photos/team-women-800.webp" alt="" loading="lazy"></div>
-      <div class="ad-shape-half-t ad-fill-navy" style="transform:rotate(180deg)"></div>
-      <div class="ad-shape-circle"><img src="{{root}}assets/photos/laptop-man-800.webp" alt="" loading="lazy" style="object-position:50% 20%"></div>
-    </div>
-  </div>
-</section>
-
-<section class="ad-sec ad-on-light ad-close" aria-labelledby="close-title">
-  <div class="ad-wrap">
-    <p class="ad-eyebrow">Contact</p>
-    <h2 id="close-title" class="ad-h2 ad-mt-s">How can we help?</h2>
-    <p class="ad-lede">Tell us about the challenge in front of you. A partner will reply in confidence.</p>
-    <div class="ad-actions"><a class="ad-btn" href="{{root}}contact/">Contact us <svg class="ad-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a><a class="ad-btn ad-btn--ghost" href="{{root}}about/">About Aldier</a></div>
-  </div>
+<section class="ad-duocta" aria-label="Get in touch">
+  <div><h2 class="ad-h2">What can we help you achieve?</h2><a class="ad-btn ad-btn--square" href="{{root}}contact/">Let's get to work</a></div>
+  <div><h2 class="ad-h2">Where will your career take you?</h2><a class="ad-btn ad-btn--square" href="{{root}}careers/">Come find out</a></div>
 </section>

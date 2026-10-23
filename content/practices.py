@@ -3,7 +3,11 @@
 Run from the project root: python3 content/practices.py
 """
 
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from feed import latest  # noqa: E402
 
 SRC = Path(__file__).resolve().parent.parent / "src" / "practices"
 
@@ -253,12 +257,18 @@ preload: assets/film/{p['film']}.webp
 
 {feature(p)}
 
-<section class="ad-sec ad-on-light" id="related" aria-labelledby="joins-title">
+<section class="ad-sec ad-on-light" id="related" aria-labelledby="latest-title">
   <div class="ad-wrap">
-    <div class="ad-head"><div><p class="ad-eyebrow">Explore further</p><h2 id="joins-title" class="ad-h2">Related practices and insights</h2></div></div>
+    {latest(p["slug"])}
+  </div>
+</section>
+
+<section class="ad-sec ad-sec--tight ad-mist" aria-labelledby="joins-title">
+  <div class="ad-wrap">
+    <div class="ad-head"><div><p class="ad-eyebrow">Explore further</p><h2 id="joins-title" class="ad-h2">Related practices</h2></div></div>
     <div class="ad-cards">
       {joins}
-      <a class="ad-card" style="background:var(--ink);color:#fff;border-color:transparent" href="{{{{root}}}}insights/{slug}/"><span class="ad-tile__type" style="color:var(--sky)">Featured insight</span><h3>{title}</h3><span class="ad-link" style="color:var(--sky)">Read {{{{arrow}}}}</span></a>
+      <a class="ad-card" style="background:var(--ink);color:#fff;border-color:transparent" href="{{{{root}}}}podcast/"><span class="ad-tile__type" style="color:var(--sky)">Podcast</span><h3>The Aldier Podcast</h3><p style="color:rgba(255,255,255,.75)">Conversations with the people who build institutions. Season one coming soon.</p><span class="ad-link" style="color:var(--sky)">Listen {{{{arrow}}}}</span></a>
     </div>
   </div>
 </section>

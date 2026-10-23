@@ -19,6 +19,7 @@
 const FORMS = {
   contact: { required: ["name", "email", "message"], consent: true, subject: "Enquiry" },
   briefing: { required: ["email"], consent: false, subject: "Briefing subscription" },
+  podcast: { required: ["email"], consent: false, subject: "Podcast launch list" },
   "board-programme": { required: ["name", "email", "organisation", "role"], consent: true, subject: "Board Programme registration" },
   careers: { required: ["name", "email", "discipline"], consent: true, subject: "Careers registration" },
 };
@@ -133,6 +134,7 @@ export async function onRequestPost({ request, env }) {
   const thanks = {
     contact: "Thank you. Your message has reached Aldier, and a partner will reply.",
     briefing: "Thank you. You will receive the next Aldier Briefing.",
+    podcast: "Thank you. We will send you the first episode on the day it is released.",
     "board-programme": "Thank you. A partner will be in touch about the Board Programme.",
     careers: "Thank you. We will write to you when applications open.",
   };
