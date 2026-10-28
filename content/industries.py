@@ -79,7 +79,7 @@ INDUSTRIES = [
             ("How do we compete for students and partners?", "Positioning, identity and the experience prospective students meet online and on arrival."),
             ("How do we govern a growing institution?", "Operating models, decision rights and shared services for multi-campus systems."),
         ],
-        "spot": ("GENIVY", "GENIVY is the international guild of students for which Aldier serves as Founding Partner. Owned by its members, it organises the work already present on university campuses and pays students to run it.", "work/genivy/", "Read the case study", "lecture", "Students listening in a lecture hall"),
+        "spot": ("GENIVY", "GENIVY is the international guild of students for which Aldier serves as Founding Partner. Owned by its members, it gives each university campus the institutions of a working economy and pays students to run them.", "work/genivy/", "Read the case study", "lecture", "Students listening in a lecture hall"),
     },
     {
         "slug": "energy",
