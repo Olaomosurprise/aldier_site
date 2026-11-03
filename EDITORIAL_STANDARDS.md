@@ -53,3 +53,7 @@ Before publishing a consequential claim: identify source, date, owner, legal/fin
 ## Public narrative to preserve
 
 **Your campus. Your economy.** This speaks to the student who belongs and participates; it is not a legal statement of collective ownership. GENIVY's institutional ambition is to build the Guild, enterprises, opportunities, support services and physical capacity that enable students to participate in campus economic and civic life across generations.
+
+## Public copy
+
+Use full stops, commas or parentheses where a sentence needs a break. Avoid em dashes. Name the service or role first. Use GENIVY Originals only to credit work created solely by the Guild. Identify joint creators and independent organisers by name where agreed.
