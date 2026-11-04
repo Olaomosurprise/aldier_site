@@ -79,7 +79,7 @@ INDUSTRIES = [
             ("How do we compete for students and partners?", "Positioning, identity and the experience prospective students meet online and on arrival."),
             ("How do we govern a growing institution?", "Operating models, decision rights and shared services for multi-campus systems."),
         ],
-        "spot": ("GENIVY", "GENIVY is a proposed independent student-centred guild developed with Aldier's founding contribution. Its model connects student-managed enterprises, existing independent businesses, paid experience and community programmes, subject to university and legal approvals.", "work/genivy/", "Read the case study", "lecture", "Students listening in a lecture hall"),
+        "spot": ("GENIVY", "GENIVY brings enterprise, employment, property and community funding into a common institutional model for university campuses. Aldier's founding work covers the strategy, operating architecture and digital presence.", "work/genivy/", "Read the case study", "lecture", "Students listening in a lecture hall"),
     },
     {
         "slug": "energy",
