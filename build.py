@@ -123,7 +123,7 @@ NAV = [
             ]),
         ],
         "featured": [
-            ("GENIVY", "The international guild of students for which Aldier serves as Founding Partner.", "work/genivy/"),
+            ("GENIVY", "An independent institution being developed for tertiary education and student life.", "work/genivy/"),
         ],
     },
     {
