@@ -4,7 +4,7 @@
 
 ## The governing distinction
 
-GENIVY is an independent student-centred guild *in development*. Its mission is to expand how students participate in the economy and community of their university, not to take ownership of that economy. The campus-as-city argument should be the overarching economic thesis. The Guild is a community of membership and meaningful participation; GENIVY Originals are proposed student-managed enterprises; independent traders remain independent; programmes and associations are distinct; property, work-study, finance and external opportunities each require their own legal and financial structures.
+GENIVY is an independent global institution in development. Its mandate is to strengthen tertiary institutions and enrich the civic, cultural and economic life of their communities. Use “tertiary education” for GENIVY’s field and “tertiary institutions” for its partners. Use “campus” for an identifiable place, its community or a programme that carries the word in its name. The campus-as-city essay explains the setting for part of GENIVY’s work. The Student Development Network connects members with work and programmes. Enterprise Relations develops employer partnerships. Student-managed enterprises conduct business. GENIVY Originals are educational and cultural programmes. Nigeria is the proposed first operating market.
 
 ## Editorial discipline
 
@@ -52,7 +52,7 @@ Before publishing a consequential claim: identify source, date, owner, legal/fin
 
 ## Public narrative to preserve
 
-**Your campus. Your economy.** This speaks to the student who belongs and participates; it is not a legal statement of collective ownership. GENIVY's institutional ambition is to build the Guild, enterprises, opportunities, support services and physical capacity that enable students to participate in campus economic and civic life across generations.
+The student-facing phrase **Your campus. Your economy.** refers to participation in a local community. GENIVY's institutional ambition is to build the Guild, enterprises, opportunities, support services and physical capacity that enable students to participate in campus economic and civic life across generations.
 
 ## Public copy
 
