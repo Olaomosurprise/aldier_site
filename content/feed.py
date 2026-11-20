@@ -12,7 +12,7 @@ ITEMS = [
      "title": "The handover: building institutions that outlast their founders",
      "dek": "An institution is tested on the day its founders leave. The best ones plan for that day first.", "type": "Perspective", "meta": "6 min read"},
     {"url": "work/genivy/", "img": "auditorium", "cat": "Education", "practices": ["strategy", "technology", "cybersecurity", "design", "communications"],
-     "title": "GENIVY: infrastructure for the campus economy",
+     "title": "GENIVY: infrastructure for tertiary education",
      "dek": "The commercial, institutional and digital design behind GENIVY.", "type": "Case study", "meta": "Client story"},
     {"url": "podcast/", "img": "microphones", "cat": "The Aldier Podcast", "practices": ["communications"],
      "title": "The Aldier Podcast: conversations with the people who build institutions",
